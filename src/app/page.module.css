@@ -1,0 +1,18 @@
+.bodyContainer{
+   width: 100vw;
+   height: 100vh;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   background-color: 'theme.palette.background.level1';
+
+   padding: 2rem;
+}
+
+.loginContainer {
+   height: 100%;
+   width: 500px;
+}
+
