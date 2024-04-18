@@ -3,6 +3,8 @@ import ThemeRegistry from "@/theme/ThemeRegistry";
 import { Button, Typography } from "@mui/joy";
 
 import styles from './layout.module.css'
+import Image from "next/image";
+import { Logout } from "@mui/icons-material";
 
 export const metadata = {
   title: "Dashboard",
@@ -13,14 +15,16 @@ export default function RootLayout({ children }) {
   return (
     <div className={styles.layoutContainer}>
       <nav className="flex justify-between">
-        <div className="flex items-center gap-2">
-          <img src="/profile.png" height={'70px'} alt="" />
+        <div className="flex items-center gap-5">
+          <Image className={"rounded-full"} src="/profile.png" height={'70'} width={"70"} alt="" />
           <div>
             <Typography level="title-md">Marcelo da Silva</Typography>
-            <Typography level="body">Apartmento 01-B</Typography>
+            <Typography level="body-md">Apartmento 01-B</Typography>
           </div>
         </div>
-        <Button variant="outlined" endDecorator={"+"}>Sair</Button>
+        <div className={"flex items-center"}>
+          <Button variant="outlined" endDecorator={<Logout/>}>Sair</Button>
+        </div>
       </nav>
       {children}
     </div>

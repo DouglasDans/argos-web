@@ -1,3 +1,7 @@
 .layoutContainer{
    margin: 50px 150px;
+
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
 }
