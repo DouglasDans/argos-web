@@ -1,0 +1,22 @@
+.dashContainer{
+    display: grid;
+    grid-template-areas: 'buttons activity'
+                         'tags activity'
+                         'tags activity';
+    grid-template-columns: 40% 1fr ;
+
+    gap: 0.6rem
+}
+
+.buttonsContainer{
+    grid-area: buttons
+}
+
+.tagsContainer{
+    grid-area: tags;
+}
+
+.activityContainer{
+    grid-area: activity;
+}
+

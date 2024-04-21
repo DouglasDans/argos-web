@@ -1,0 +1,7 @@
+.tagItemCard{
+    background-color: dodgerblue;
+    display: block;
+    width: 60px;
+    height: 40px;
+    border-radius: 6px;
+}

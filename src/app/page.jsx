@@ -1,7 +1,8 @@
-import CardWrapper from '@/ui/CardWrapper';
+import CardWrapper from '@/ui/containers/CardWrapper';
 import styles from './page.module.css'
 import { Button, FormControl, FormHelperText, FormLabel, Input, Typography } from '@mui/joy';
 import Link from 'next/link';
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       <CardWrapper className={"flex flex-col justify-between items-center h-auto w-2/5 p-10 gap-5"}>
 
         <div className={'flex justify-center items-center'}>
-          <Image src='/logo.svg' height={'70px'}/>
+          <Image src='/logo.svg' height={'150'} width={'150'}/>
         </div>
         
         <Typography level='h1'>Login</Typography>
@@ -27,7 +28,6 @@ export default function Home() {
               <Input type='password' placeholder="*****" />
             </FormControl>
 
-            
             <Link href={"/user/dashboard"}><Button type='submit'>Acessar</Button></Link>
             <Link href={"/adm"}>Logar como ADM</Link>
           </form>

@@ -28,8 +28,8 @@ const theme = extendTheme({
       }
    },
    fontFamily: {
-      body: ubuntu.style.fontFamily,
-      display: ubuntu.style.fontFamily
+      body: ubuntu,
+      display: ubuntu
    },
    // components: {
    //    JoyButton: {
