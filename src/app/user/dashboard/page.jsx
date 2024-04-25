@@ -24,41 +24,45 @@ const arr = [
 export default function Dashboard() {
   return (
     <Fragment>
-      <div>
+      <div className='title'>
         <Typography level={'h2'}>Dashboard</Typography>
         <Typography level={'body-sm'}></Typography>
       </div>
 
-      <div className={styles.dashContainer}>
-         <div className={styles.buttonsContainer}>
-            <Button fullWidth variant={'solid'}>Solicitar Chamado</Button>
-         </div>
+      <div>
+         <div className={styles.dashContainer}>
+            <div className={styles.buttonsContainer}>
+               <Button fullWidth variant={'solid'}>Solicitar Chamado</Button>
+            </div>
 
-         <div className={styles.tagsContainer}>
-            <CardWrapper className={'p-4 flex flex-col gap-2'}>
-               <Typography level={'title-lg'}>Tags Cadastradas</Typography>
-               <div>
-                  <TagItem/>
-                  <TagItem/>
-                  <TagItem/>
-               </div>
-
-            </CardWrapper>
-         </div>
-
-         <div className={styles.activityContainer}>
-            <CardWrapper className={'p-4 flex flex-col gap-2'}>
-               <Typography level={'title-lg'}>Atividades do Usuario</Typography>
-
-               <div className={"flex justify-center flex-col"}>
-                  <ActivityCalendar blockSize={8} blockMargin={2} data={arr}/>
-
-                  <div className={'flex '}>
-                     <ActivityItem/>
+            <div className={styles.tagsContainer}>
+               <CardWrapper className={'p-4 flex flex-col gap-2'}>
+                  <Typography level={'title-lg'}>Tags Cadastradas</Typography>
+                  <div>
+                     <TagItem/>
+                     <TagItem/>
+                     <TagItem/>
                   </div>
-               </div>
-            </CardWrapper>
+
+               </CardWrapper>
+            </div>
+
+            <div className={styles.activityContainer}>
+               <CardWrapper className={'p-4 flex flex-col gap-2'}>
+                  <Typography level={'title-lg'}>Atividades do Usuario</Typography>
+
+                  <div className={'user-activity flex flex-col gap-5'}>
+                     <div className={"flex justify-center"}>
+                        <ActivityCalendar blockSize={8} blockMargin={2} data={arr}/>
+                     </div>
+                     <div className={'flex'}>
+                        <ActivityItem />
+                     </div>
+                  </div>
+               </CardWrapper>
+            </div>
          </div>
+
       </div>
 
        <CardWrapper>
