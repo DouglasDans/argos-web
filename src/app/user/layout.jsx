@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           </div>
         </div>
         <div className={"flex items-center"}>
-          <Button variant="outlined" endDecorator={<Logout/>}>Sair</Button>
+          <Button variant="outlined" color="neutral" endDecorator={<Logout/>}>Sair</Button>
         </div>
       </nav>
       {children}
