@@ -10,7 +10,6 @@
 
 .buttonsContainer{
     grid-area: buttons;
-    height: 0px;
 }
 
 .tagsContainer{

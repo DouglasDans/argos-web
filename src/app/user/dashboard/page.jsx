@@ -9,18 +9,19 @@ import ActivityCalendar from "react-activity-calendar";
 import ActivityItem from "@/ui/dashboard/ActivityItem";
 import { Delete, Edit } from '@mui/icons-material';
 
-const arr = [
-   {
-      "date": "2022-06-14",
-      "count": 2,
-      "level": 1
+const arr = () => {
+   return [{
+      date: "2021-02-20",
+      count: 16,
+      level: 3
    },
    {
       "date": "2023-06-22",
-      "count": 1,
-      "level": 3
+      "count": '1',
+      "level": '3'
    }
 ]
+}
 
 export default function Dashboard() {
   return (
@@ -54,7 +55,14 @@ export default function Dashboard() {
 
                   <div className={'user-activity flex flex-col gap-5'}>
                      <div className={"flex justify-center"}>
-                        <ActivityCalendar blockSize={8} blockMargin={2} data={arr}/>
+                        {/* <ActivityCalendar 
+                           blockSize={8} 
+                           blockMargin={2} 
+                           theme={{
+                              light: ['hsl(0, 0%, 92%)', 'firebrick'],
+                              dark: ['#333', 'rgb(214, 16, 174)'],
+                            }}
+                           data={arr}/> */}
                      </div>
                      <div className={'flex flex-wrap gap-3'}>
                         <ActivityItem />
