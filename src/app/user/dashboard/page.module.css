@@ -9,7 +9,7 @@
 }
 
 .buttonsContainer{
-    grid-area: buttons
+    grid-area: buttons;
 }
 
 .tagsContainer{
