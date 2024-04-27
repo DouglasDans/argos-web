@@ -9,7 +9,8 @@
 }
 
 .buttonsContainer{
-    grid-area: buttons
+    grid-area: buttons;
+    height: 0px;
 }
 
 .tagsContainer{

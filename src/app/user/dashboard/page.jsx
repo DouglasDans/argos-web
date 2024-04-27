@@ -36,7 +36,7 @@ export default function Dashboard() {
             </div>
 
             <div className={styles.tagsContainer}>
-               <CardWrapper className={'p-4 flex flex-col gap-2'}>
+               <CardWrapper className={'p-4 flex flex-col gap-2 h-full'}>
                   <Typography level={'title-lg'}>Tags Cadastradas</Typography>
                   <div>
                      <TagItem/>
@@ -55,7 +55,10 @@ export default function Dashboard() {
                      <div className={"flex justify-center"}>
                         <ActivityCalendar blockSize={8} blockMargin={2} data={arr}/>
                      </div>
-                     <div className={'flex'}>
+                     <div className={'flex flex-wrap gap-3'}>
+                        <ActivityItem />
+                        <ActivityItem />
+                        <ActivityItem />
                         <ActivityItem />
                      </div>
                   </div>
@@ -65,7 +68,7 @@ export default function Dashboard() {
 
       </div>
 
-       <CardWrapper>
+       <CardWrapper className='p-4'>
           aaaa
        </CardWrapper>
 
