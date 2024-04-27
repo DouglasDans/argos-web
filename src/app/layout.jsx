@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" data-color-scheme="light">
-      <body>
+      <body className="antialiased">
         <ThemeRegistry>
           {children}  
         </ThemeRegistry> 

@@ -1,13 +1,10 @@
 import React, { Fragment } from 'react'
-import {Button, Table, Typography } from "@mui/joy";
+import {Button, Typography } from "@mui/joy";
 
-import CardWrapper from "@/ui/containers/CardWrapper";
-
+import DependentesCadastrados from '@/ui/dashboard/modulos/DependentesCadastrados/DependentesCadastrados';
+import AtividadesRegistradas from '@/ui/dashboard/modulos/AtividadesRegitradas/AtividadesRegistradas';
+import TagsCadastradas from '@/ui/dashboard/modulos/TagsCadastradas/TagsCadastradas';
 import styles from './page.module.css';
-import TagItem from "@/ui/dashboard/TagItem";
-import ActivityCalendar from "react-activity-calendar";
-import ActivityItem from "@/ui/dashboard/ActivityItem";
-import { Delete, Edit } from '@mui/icons-material';
 
 const arr = () => {
    return [{
@@ -31,74 +28,23 @@ export default function Dashboard() {
         <Typography level={'body-sm'}></Typography>
       </div>
 
-      <div>
+      <div className='flex flex-col gap-2'>
          <div className={styles.dashContainer}>
             <div className={styles.buttonsContainer}>
                <Button fullWidth variant={'solid'}>Solicitar Chamado</Button>
             </div>
 
             <div className={styles.tagsContainer}>
-               <CardWrapper className={'p-4 flex flex-col gap-2 h-full'}>
-                  <Typography level={'title-lg'}>Tags Cadastradas</Typography>
-                  <div>
-                     <TagItem/>
-                     <TagItem/>
-                     <TagItem/>
-                  </div>
-
-               </CardWrapper>
+               <TagsCadastradas/>
             </div>
 
             <div className={styles.activityContainer}>
-               <CardWrapper className={'p-4 flex flex-col gap-2'}>
-                  <Typography level={'title-lg'}>Atividades do Usuario</Typography>
-
-                  <div className={'user-activity flex flex-col gap-5'}>
-                     <div className={"flex justify-center"}>
-                        {/* <ActivityCalendar 
-                           blockSize={8} 
-                           blockMargin={2} 
-                           theme={{
-                              light: ['hsl(0, 0%, 92%)', 'firebrick'],
-                              dark: ['#333', 'rgb(214, 16, 174)'],
-                            }}
-                           data={arr}/> */}
-                     </div>
-                     <div className={'flex flex-wrap gap-3'}>
-                        <ActivityItem />
-                        <ActivityItem />
-                        <ActivityItem />
-                        <ActivityItem />
-                     </div>
-                  </div>
-               </CardWrapper>
+               <AtividadesRegistradas/>
             </div>
          </div>
 
+         <DependentesCadastrados/>
       </div>
-
-       <CardWrapper className='p-4'>
-         <Typography level={'title-lg'}>Dependentes Cadastrados</Typography>
-
-         <Table>
-            <thead>
-               <tr>
-                  <th>Nome do Dependente</th>
-                  <th>RG do Dependente</th>
-                  <th>Edtar</th>
-                  <th>Excluir</th>
-               </tr>
-            </thead>
-            <tbody>
-               <tr>
-                  <td>João da Silva</td>
-                  <td>123456789</td>
-                  <td><Edit/></td>
-                  <td><Delete/></td>
-               </tr>
-            </tbody>
-         </Table>
-       </CardWrapper>
 
     </Fragment>
   )
