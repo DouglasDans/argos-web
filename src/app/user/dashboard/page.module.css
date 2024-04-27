@@ -5,7 +5,7 @@
                          'tags activity';
     grid-template-columns: 40% 1fr ;
 
-    gap: 0.6rem
+    gap: 10px
 }
 
 .buttonsContainer{
