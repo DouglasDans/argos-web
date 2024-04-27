@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styles from './TagItem.module.css'
-import {Typography} from "@mui/joy";
+import {Button, Typography} from "@mui/joy";
 import Link from "next/link";
 import {History} from "@mui/icons-material";
 
@@ -16,7 +16,7 @@ export default function TagItem() {
             </div>
          </div>
          <div>
-            <Link href={'/'}><History/></Link>
+            <Button color='neutral' variant='soft'><History/></Button>
          </div>
       </div>
    )

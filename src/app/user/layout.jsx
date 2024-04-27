@@ -1,10 +1,9 @@
-import { Inter } from "next/font/google";
-import ThemeRegistry from "@/theme/ThemeRegistry";
 import { Button, Typography } from "@mui/joy";
 
 import styles from './layout.module.css'
 import Image from "next/image";
 import { Logout } from "@mui/icons-material";
+import Link from "next/link";
 
 export const metadata = {
   title: "Dashboard",
@@ -23,7 +22,7 @@ export default function RootLayout({ children }) {
           </div>
         </div>
         <div className={"flex items-center"}>
-          <Button variant="outlined" color="neutral" endDecorator={<Logout/>}>Sair</Button>
+          {/* <Link href={'/'}><Button variant="outlined" color="neutral" endDecorator={<Logout/>}>Sair</Button></Link> */}
         </div>
       </nav>
       {children}

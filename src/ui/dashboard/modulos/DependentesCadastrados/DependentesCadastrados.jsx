@@ -1,6 +1,6 @@
 import CardWrapper from '@/ui/containers/CardWrapper'
 import { Delete, Edit } from '@mui/icons-material'
-import { Table, Typography } from '@mui/joy'
+import { Button, Table, Typography } from '@mui/joy'
 import Link from 'next/link'
 import styles from './DependentesCadastrados.module.css'
 
@@ -23,9 +23,9 @@ export default function DependentesCadastrados() {
                   <td>João da Silva</td>
                   <td>123456789</td>
                   <td>
-                     <Link href={"#"}><Edit/></Link>
+                     <Button color='neutral' variant='soft'><Edit/></Button>
                   </td>
-                  <td><Delete/></td>
+                  <td><Button color='neutral' variant='soft'><Delete/></Button></td>
                </tr>
             </tbody>
          </Table>
