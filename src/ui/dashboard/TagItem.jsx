@@ -6,7 +6,7 @@ import {History} from "@mui/icons-material";
 
 export default function TagItem() {
    return (
-      <div className={'flex justify-between items-center p-3'}>
+      <div className={'flex justify-between items-center'}>
          <div className={'flex gap-3 items-center'}>
             <span className={styles.tagItemCard}></span>
 
