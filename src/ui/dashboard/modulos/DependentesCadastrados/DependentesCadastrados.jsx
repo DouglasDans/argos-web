@@ -2,11 +2,11 @@ import CardWrapper from '@/ui/containers/CardWrapper'
 import { Delete, Edit } from '@mui/icons-material'
 import { Table, Typography } from '@mui/joy'
 import Link from 'next/link'
-import React from 'react'
+import styles from './DependentesCadastrados.module.css'
 
 export default function DependentesCadastrados() {
   return (
-      <CardWrapper className='p-4'>
+      <CardWrapper className={styles.container}>
          <Typography level={'title-lg'}>Dependentes Cadastrados</Typography>
 
          <Table>

@@ -1,11 +1,12 @@
 import CardWrapper from '@/ui/containers/CardWrapper'
 import { Typography } from '@mui/joy'
-import React from 'react'
 import ActivityItem from './ActivityItem'
+
+import styles from './AtividadesRegistradas.module.css'
 
 export default function AtividadesRegistradas() {
    return (
-      <CardWrapper className={'p-4 flex flex-col gap-2'}>
+      <CardWrapper className={styles.container + ' flex flex-col gap-2'}>
          <Typography level={'title-lg'}>Atividades Registradas</Typography>
 
          <div className={'user-activity flex flex-col gap-5'}>

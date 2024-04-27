@@ -18,5 +18,7 @@
 
 .activityContainer{
     grid-area: activity;
+    display: flex;
+    align-items: stretch;
 }
 
