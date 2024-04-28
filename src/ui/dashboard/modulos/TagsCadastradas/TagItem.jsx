@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
 import styles from './TagItem.module.css'
-import {Button, Typography} from "@mui/joy";
-import Link from "next/link";
+import {Button, Modal, ModalClose, ModalDialog, Typography} from "@mui/joy";
 import {History} from "@mui/icons-material";
+import Link from "next/link";
 
 export default function TagItem() {
+
    return (
       <div className={'flex justify-between items-center'}>
          <div className={'flex gap-3 items-center'}>
@@ -16,8 +17,21 @@ export default function TagItem() {
             </div>
          </div>
          <div>
-            <Button color='neutral' variant='soft'><History/></Button>
+            <Link href={'historico/2'}>
+               <Button color='neutral' variant='soft'>
+                  <History/>
+               </Button>
+            </Link>
          </div>
+
+         <Modal>
+            <ModalDialog>
+               <ModalClose />
+               <Typography>Modal title</Typography>
+            </ModalDialog>
+         </Modal>
+
+
       </div>
    )
 }
