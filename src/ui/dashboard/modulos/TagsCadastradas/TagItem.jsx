@@ -24,12 +24,7 @@ export default function TagItem() {
             </Link>
          </div>
 
-         <Modal>
-            <ModalDialog>
-               <ModalClose />
-               <Typography>Modal title</Typography>
-            </ModalDialog>
-         </Modal>
+        
 
 
       </div>

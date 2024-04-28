@@ -23,7 +23,9 @@ export default function DependentesCadastrados() {
                   <td>João da Silva</td>
                   <td>123456789</td>
                   <td>
-                     <Button color='neutral' variant='soft'><Edit/></Button>
+                     <Link href={'dependente/1'}>
+                        <Button color='neutral' variant='soft'><Edit/></Button>
+                     </Link>
                   </td>
                   <td><Button color='neutral' variant='soft'><Delete/></Button></td>
                </tr>
