@@ -16,7 +16,7 @@ export default function RootLayout({ modal, children }) {
     <div className={styles.layoutContainer}>
       <nav className="flex justify-between">
         <div className="flex items-center gap-5">
-          <Image className={"rounded-full"} src="/profile.png" height={'70'} width={"70"} alt="" />
+          <Image className={"rounded-full"} src="/profile.png" height={'70'} width={"70"} alt="Sua foto de perfil" />
           <div>
             <Typography level="title-md">Marcelo da Silva</Typography>
             <Typography level="body-md">Apartmento 01-B</Typography>
@@ -25,7 +25,7 @@ export default function RootLayout({ modal, children }) {
         <div className={"flex items-center"}>
             <ToggleColorButton/>
             <Link aria-label="Botão para sair da sua conta no sistema" href={'/'}>
-              <Button variant="outlined" color="neutral" endDecorator={<Logout/>}>Sair</Button>
+              <Button variant="outlined" color="neutral" startDecorator={<Logout/>}>Sair</Button>
             </Link>
         </div>
       </nav>

@@ -24,10 +24,10 @@ export default function DependentesCadastrados() {
                   <td>123456789</td>
                   <td>
                      <Link href={'dependente/1'}>
-                        <Button color='neutral' variant='soft'><Edit/></Button>
+                        <Button aria-label='Botão para editar informações do dependente' color='neutral' variant='soft'><Edit/></Button>
                      </Link>
                   </td>
-                  <td><Button color='neutral' variant='soft'><Delete/></Button></td>
+                  <td><Button aria-label='Botão para deletar informações do dependente' color='neutral' variant='soft'><Delete/></Button></td>
                </tr>
             </tbody>
          </Table>

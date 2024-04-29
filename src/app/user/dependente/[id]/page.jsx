@@ -45,10 +45,10 @@ export default function GerenciamentoDependente({params}) {
                   </div>
 
                   <div className={'flex gap-2 items-center'}>
-                     <Button color='neutral' variant='soft'>
+                     <Button aria-label='Botão para ver histórico da TAG' color='neutral' variant='soft'>
                         <History/>
                      </Button>
-                     <Button color='neutral' variant='soft'>
+                     <Button aria-label='Botão para deletar TAG do dependente' color='neutral' variant='soft'>
                         <Delete/>
                      </Button>
                   </div>
