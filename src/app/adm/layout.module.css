@@ -1,0 +1,13 @@
+.layoutContainer{
+   margin: 50px 150px;
+
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+   .layoutContainer {
+      margin: 20px;
+   }
+}
