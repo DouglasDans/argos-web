@@ -6,7 +6,7 @@
    justify-content: center;
    align-items: center;
 
-   background-color: 'theme.palette.background.level1';
+   background-color: var(--joy-palette-background-body);
 
    padding: 2rem;
 }

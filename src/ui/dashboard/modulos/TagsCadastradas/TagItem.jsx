@@ -18,7 +18,7 @@ export default function TagItem() {
          </div>
          <div>
             <Link href={'historico/2'}>
-               <Button color='neutral' variant='soft'>
+               <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
                   <History/>
                </Button>
             </Link>

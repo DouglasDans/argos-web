@@ -1,16 +1,22 @@
 import CardWrapper from '@/ui/containers/CardWrapper'
 import { ContainerLevel3 } from '@/ui/containers/ContainerLevel3'
 import AtividadesRegistradas from '@/ui/dashboard/modulos/AtividadesRegitradas/AtividadesRegistradas'
-import { Delete, History } from '@mui/icons-material'
+import { ArrowBack, Delete, History } from '@mui/icons-material'
 import { Button, Table, Typography } from '@mui/joy'
+import Link from 'next/link'
 import React, { Fragment } from 'react'
 
 export default function GerenciamentoDependente({params}) {
    return (
 
       <Fragment>
-         <div className='title'>
-            <Typography level={'h2'}>Dashboard</Typography>
+         <div className='title flex items-center gap-3'>
+            <Link aria-label='Link de retorno para a tela principal da dashboard'  Link href={'/user/dashboard'}>
+               <ArrowBack/>
+            </Link>
+            <Typography level={'h2'}>
+               Dashboard
+            </Typography>
             <Typography level={'body-sm'}></Typography>
          </div>
          <CardWrapper className="p-4 flex flex-col gap-4">
@@ -39,10 +45,10 @@ export default function GerenciamentoDependente({params}) {
                   </div>
 
                   <div className={'flex gap-2 items-center'}>
-                     <Button color='neutral' variant='soft'>
+                     <Button aria-label='Botão para ver histórico da TAG' color='neutral' variant='soft'>
                         <History/>
                      </Button>
-                     <Button color='neutral' variant='soft'>
+                     <Button aria-label='Botão para deletar TAG do dependente' color='neutral' variant='soft'>
                         <Delete/>
                      </Button>
                   </div>

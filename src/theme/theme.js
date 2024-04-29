@@ -39,6 +39,29 @@ const theme = extendTheme({
                icon: '#1C1B1F'
             }
          }
+      },
+      dark: {
+         palette: {
+            background: {
+               body: '#000',
+               level1: '#171A1C',
+               level2: '#32383E',
+            },
+            primary: {
+               '50': '#FFF3DB',
+               '100': '#FFE7B6',
+               '200': '#FFDB92',
+               '300': '#FFCE6D',
+               '400': '#FFC249',
+               '500': '#FFAA00',
+               '600': '#C88600',
+               '700': '#A46D00',
+               '800': '#805500',
+               '900': '#5B3D00',
+               "solidColor": "#1C1B1F",
+            },
+            
+         }
       }
    },
    fontFamily: {

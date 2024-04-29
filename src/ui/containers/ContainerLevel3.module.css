@@ -1,6 +1,6 @@
 .container {
-    border: 2px solid #d9d9d9;
-    background-color: #f4f4f5;
+    border: 2px solid var(--joy-palette-background-level2);
+    background-color: var(--joy-palette-background-level1);
 
     border-radius: 6px;
     padding: 1rem;
