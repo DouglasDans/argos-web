@@ -22,3 +22,11 @@
     align-items: stretch;
 }
 
+@media (max-width: 1080px) {
+    .dashContainer {
+        grid-template-areas: 'buttons'
+                             'tags'
+                            'activity';
+        grid-template-columns: 1fr;
+    }
+}
