@@ -1,4 +1,4 @@
 .container {
-    border: 1px solid #d9d9d9;
-    background-color: #F5F5FC;
+    border: 1px solid var(--joy-palette-background-level2);
+    background-color: var(--joy-palette-background-level1);
 }

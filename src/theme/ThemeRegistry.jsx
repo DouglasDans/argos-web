@@ -6,7 +6,7 @@ import theme from './theme';
 
 export default function ThemeRegistry({ children }) {
    return (
-      <CssVarsProvider defaultMode="light" theme={theme} disableNestedContext>
+      <CssVarsProvider defaultMode="dark" theme={theme} disableNestedContext>
          {getInitColorSchemeScript()}
          <CssBaseline />
          {children}

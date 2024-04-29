@@ -1,13 +1,21 @@
+'use client'
+
 import CardWrapper from "@/ui/containers/CardWrapper";
-import { History } from "@mui/icons-material";
+import { ArrowBack, History } from "@mui/icons-material";
 import { Table, Typography } from "@mui/joy";
+import Link from "next/link";
 import { Fragment } from "react";
 
 export default function Historico({ params }) {
    return (
       <Fragment>
-         <div className='title'>
-            <Typography level={'h2'}>Dashboard</Typography>
+         <div className='title flex items-center gap-3'>
+            <Link aria-label="Link de retorno para a tela principal da dashboard" href={'/user/dashboard'}>
+               <ArrowBack/>
+            </Link>
+            <Typography level={'h2'}>
+               Dashboard
+            </Typography>
             <Typography level={'body-sm'}></Typography>
          </div>
 

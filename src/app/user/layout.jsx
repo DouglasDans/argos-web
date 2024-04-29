@@ -4,6 +4,7 @@ import styles from './layout.module.css'
 import Image from "next/image";
 import { Logout } from "@mui/icons-material";
 import Link from "next/link";
+import ToggleColorButton from "@/ui/ToggleColorButton";
 
 export const metadata = {
   title: "Dashboard",
@@ -22,7 +23,10 @@ export default function RootLayout({ modal, children }) {
           </div>
         </div>
         <div className={"flex items-center"}>
-           <Link href={'/'}><Button variant="outlined" color="neutral" endDecorator={<Logout/>}>Sair</Button></Link>
+            <ToggleColorButton/>
+            <Link aria-label="Botão para sair da sua conta no sistema" href={'/'}>
+              <Button variant="outlined" color="neutral" endDecorator={<Logout/>}>Sair</Button>
+            </Link>
         </div>
       </nav>
       {modal}
