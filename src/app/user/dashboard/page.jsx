@@ -31,7 +31,7 @@ export default function Dashboard() {
       <div className='flex flex-col gap-2'>
          <div className={styles.dashContainer}>
             <div className={styles.buttonsContainer}>
-               <Button fullWidth variant={'solid'}>Solicitar Chamado</Button>
+               <Button aria-label='Botão para solicitar um novo chamado' fullWidth variant={'solid'}>Solicitar Chamado</Button>
             </div>
 
             <div className={styles.tagsContainer}>
