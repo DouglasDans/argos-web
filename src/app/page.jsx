@@ -29,7 +29,7 @@ export default function Home() {
             </FormControl>
 
             <Link href={"/user/dashboard"}><Button type='submit'>Acessar</Button></Link>
-            <Link href={"/adm"}>Logar como ADM</Link>
+            <Link href={"/adm/dashboard"}>Logar como ADM</Link>
           </form>
 
         </div>
