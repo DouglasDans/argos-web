@@ -29,7 +29,7 @@ export default function Home() {
             </FormControl>
 
             <Link aria-label='Botão para logar no sistema' href={"/user/dashboard"}><Button type='submit'>Acessar</Button></Link>
-            <Link aria-label='Botão para logar no sistema' href={"/adm/dashboard"}>Logar como ADM</Link>
+            {/* <Link aria-label='Botão para logar no sistema' href={"/adm/dashboard"}>Logar como ADM</Link> */}
           </form>
 
         </div>
