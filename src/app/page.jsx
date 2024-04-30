@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className={styles.bodyContainer}>
-      <CardWrapper className={"flex flex-col justify-between items-center h-auto w-2/5 p-10 gap-5"}>
+      <CardWrapper className={"flex flex-col justify-between items-center h-auto w-2/5 p-10 gap-5 " + styles.loginContainer}>
 
         <div className={'flex justify-center items-center'}>
           <Image src='/logo.svg' height={'150'} width={'150'}/>
