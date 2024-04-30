@@ -14,7 +14,7 @@ export default function DependentesCadastrados() {
                <tr>
                   <th>Nome do Dependente</th>
                   <th>RG do Dependente</th>
-                  <th>Edtar</th>
+                  <th>Editar</th>
                   <th>Excluir</th>
                </tr>
             </thead>
