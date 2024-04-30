@@ -16,3 +16,13 @@
    width: 500px;
 }
 
+@media (max-width: 768px) {
+   .bodyContainer{
+      padding: 20px;
+   }
+
+   .loginContainer {
+      height: 100%;
+      width: 100%;
+   }
+}

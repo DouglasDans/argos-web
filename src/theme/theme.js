@@ -44,8 +44,8 @@ const theme = extendTheme({
          palette: {
             background: {
                body: '#000',
-               level1: '#171A1C',
-               level2: '#32383E',
+               level1: '#000',
+               level2: '#d9d9d9',
             },
             primary: {
                '50': '#FFF3DB',
