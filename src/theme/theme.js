@@ -48,19 +48,24 @@ const theme = extendTheme({
                level2: '#d9d9d9',
             },
             primary: {
-               '50': '#FFF3DB',
-               '100': '#FFE7B6',
-               '200': '#FFDB92',
-               '300': '#FFCE6D',
-               '400': '#FFC249',
-               '500': '#FFAA00',
-               '600': '#C88600',
-               '700': '#A46D00',
-               '800': '#805500',
-               '900': '#5B3D00',
-               "solidColor": "#1C1B1F",
+               '50': '#FFFFB6',
+               '100': '#FFFF92',
+               '200': '#FFFF6D',
+               '300': '#FFFF49',
+               '400': '#FFFF24',
+               '500': '#FFFF00',
+               '600': '#EDED00',
+               '700': '#DBDB00',
+               '800': '#C8C800',
+               '900': '#B6B600',
+               "solidColor": "#000",
             },
-            
+            text: {
+               primary: '#fff',
+               secondary: '#fff',
+               tertiary: "#fff",
+               icon: '#FFFF00'
+            }
          }
       }
    },
