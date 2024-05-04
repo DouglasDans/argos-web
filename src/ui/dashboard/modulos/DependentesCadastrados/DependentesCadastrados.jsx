@@ -1,4 +1,4 @@
-import CardWrapper from '@/ui/containers/CardWrapper'
+import ContainerLevel1 from '@/ui/containers/ContainerLevel1'
 import { Delete, Edit } from '@mui/icons-material'
 import { Button, Table, Typography } from '@mui/joy'
 import Link from 'next/link'
@@ -6,7 +6,7 @@ import styles from './DependentesCadastrados.module.css'
 
 export default function DependentesCadastrados() {
   return (
-      <CardWrapper className={styles.container}>
+      <ContainerLevel1 className={styles.container}>
          <Typography level={'title-lg'}>Dependentes Cadastrados</Typography>
 
          <Table>
@@ -31,6 +31,6 @@ export default function DependentesCadastrados() {
                </tr>
             </tbody>
          </Table>
-      </CardWrapper>
+      </ContainerLevel1>
   )
 }

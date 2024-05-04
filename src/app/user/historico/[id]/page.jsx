@@ -1,6 +1,6 @@
 'use client'
 
-import CardWrapper from "@/ui/containers/CardWrapper";
+import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
 import { ArrowBack, History } from "@mui/icons-material";
 import { Table, Typography } from "@mui/joy";
 import Link from "next/link";
@@ -19,7 +19,7 @@ export default function Historico({ params }) {
             <Typography level={'body-sm'}></Typography>
          </div>
 
-         <CardWrapper className="p-4 flex flex-col gap-4">
+         <ContainerLevel1 className="p-4 flex flex-col gap-4">
 
             <div className="flex gap-2">
                <History/>
@@ -53,7 +53,7 @@ export default function Historico({ params }) {
                   </tr>   
                </tbody>
             </Table>
-         </CardWrapper>
+         </ContainerLevel1>
          
       </Fragment>
 

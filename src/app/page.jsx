@@ -1,17 +1,16 @@
-import CardWrapper from '@/ui/containers/CardWrapper';
+import ContainerLevel1 from '@/ui/containers/ContainerLevel1';
 import styles from './page.module.css'
 import { Button, FormControl, FormHelperText, FormLabel, Input, Typography } from '@mui/joy';
 import Link from 'next/link';
 import Image from "next/image";
+import Logo from "@/ui/Logo";
 
 export default function Home() {
   return (
     <div className={styles.bodyContainer}>
-      <CardWrapper className={"flex flex-col justify-between items-center h-auto w-2/5 p-10 gap-5 " + styles.loginContainer}>
+      <ContainerLevel1 className={"flex flex-col justify-between items-center h-auto w-2/5 p-10 gap-5 " + styles.loginContainer}>
 
-        <div className={'flex justify-center items-center'}>
-          <Image src='/logo.svg' height={'150'} width={'150'}/>
-        </div>
+        <Logo/>
         
         <Typography level='h1'>Login</Typography>
 
@@ -33,7 +32,7 @@ export default function Home() {
           </form>
 
         </div>
-      </CardWrapper>
+      </ContainerLevel1>
     </div>
   );
 }
