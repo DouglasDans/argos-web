@@ -1,4 +1,4 @@
-import CardWrapper from '@/ui/containers/CardWrapper'
+import ContainerLevel1 from '@/ui/containers/ContainerLevel1'
 import { Typography } from '@mui/joy'
 import ActivityItem from './ActivityItem'
 
@@ -6,7 +6,7 @@ import styles from './AtividadesRegistradas.module.css'
 
 export default function AtividadesRegistradas() {
    return (
-      <CardWrapper className={styles.container + ' flex flex-col gap-2'}>
+      <ContainerLevel1 className={styles.container + ' flex flex-col gap-2'}>
          <Typography level={'title-lg'}>Atividades Registradas</Typography>
 
          <div className={'user-activity flex flex-col gap-5'}>
@@ -27,6 +27,6 @@ export default function AtividadesRegistradas() {
                <ActivityItem />
             </div>
          </div>
-      </CardWrapper>
+      </ContainerLevel1>
    )
 }

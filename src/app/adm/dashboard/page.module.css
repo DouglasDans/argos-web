@@ -1,0 +1,30 @@
+.dashContainer{
+    display: grid;
+    grid-template-areas: 'buttons activity chamados';
+    grid-template-columns: 30% 1fr 30%;
+    gap: 10px
+}
+
+.buttonsContainer{
+    grid-area: buttons;
+}
+
+
+.activityContainer{
+    grid-area: activity;
+    display: flex;
+    align-items: stretch;
+}
+
+.chamadosContainer{
+    grid-area: chamados;
+}
+
+@media (max-width: 1080px) {
+    .dashContainer {
+        grid-template-areas: 'buttons'
+                             'tags'
+                            'activity';
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,6 +1,6 @@
-import CardWrapper from '@/ui/containers/CardWrapper'
+import ContainerLevel1 from '@/ui/containers/ContainerLevel1'
 import { ContainerLevel3 } from '@/ui/containers/ContainerLevel3'
-import AtividadesRegistradas from '@/ui/dashboard/modulos/AtividadesRegitradas/AtividadesRegistradas'
+import AtividadesRegistradas from '@/ui/user/dashboard/AtividadesRegitradas/AtividadesRegistradas'
 import { ArrowBack, Delete, History } from '@mui/icons-material'
 import { Button, Table, Typography } from '@mui/joy'
 import Link from 'next/link'
@@ -19,7 +19,7 @@ export default function GerenciamentoDependente({params}) {
             </Typography>
             <Typography level={'body-sm'}></Typography>
          </div>
-         <CardWrapper className="p-4 flex flex-col gap-4">
+         <ContainerLevel1 className="p-4 flex flex-col gap-4">
 
             <div className="flex gap-2">
                <History/>
@@ -63,7 +63,7 @@ export default function GerenciamentoDependente({params}) {
                <Button color='primary' variant='solid'>Remover Dependente</Button>
             </div>
 
-         </CardWrapper>
+         </ContainerLevel1>
       </Fragment>
 
    )

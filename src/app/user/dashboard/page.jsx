@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
 import {Button, Typography } from "@mui/joy";
 
-import DependentesCadastrados from '@/ui/dashboard/modulos/DependentesCadastrados/DependentesCadastrados';
-import AtividadesRegistradas from '@/ui/dashboard/modulos/AtividadesRegitradas/AtividadesRegistradas';
-import TagsCadastradas from '@/ui/dashboard/modulos/TagsCadastradas/TagsCadastradas';
+import DependentesCadastrados from '@/ui/user/dashboard/DependentesCadastrados/DependentesCadastrados';
+import AtividadesRegistradas from '@/ui/user/dashboard/AtividadesRegitradas/AtividadesRegistradas';
+import TagsCadastradas from '@/ui/user/dashboard/TagsCadastradas/TagsCadastradas';
 import styles from './page.module.css';
+import LinkButton from "@/ui/LinkButton";
 
 const arr = () => {
    return [{
@@ -31,7 +32,13 @@ export default function Dashboard() {
       <div className='flex flex-col gap-2'>
          <div className={styles.dashContainer}>
             <div className={styles.buttonsContainer}>
-               <Button aria-label='Botão para solicitar um novo chamado' fullWidth variant={'solid'}>Solicitar Chamado</Button>
+               <LinkButton
+                  href="chamado"
+                  ariaLabel="Botão para solicitar chamado"
+                  variant="solid"
+               >
+                  Solicitar Chamado
+               </LinkButton>
             </div>
 
             <div className={styles.tagsContainer}>
