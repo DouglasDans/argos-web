@@ -1,6 +1,6 @@
 import ContainerLevel1 from '@/ui/containers/ContainerLevel1'
 import { ContainerLevel3 } from '@/ui/containers/ContainerLevel3'
-import AtividadesRegistradas from '@/ui/dashboard/modulos/AtividadesRegitradas/AtividadesRegistradas'
+import AtividadesRegistradas from '@/ui/user/dashboard/AtividadesRegitradas/AtividadesRegistradas'
 import { ArrowBack, Delete, History } from '@mui/icons-material'
 import { Button, Table, Typography } from '@mui/joy'
 import Link from 'next/link'

@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import {Button, Typography } from "@mui/joy";
 
-import DependentesCadastrados from '@/ui/dashboard/modulos/DependentesCadastrados/DependentesCadastrados';
-import AtividadesRegistradas from '@/ui/dashboard/modulos/AtividadesRegitradas/AtividadesRegistradas';
-import TagsCadastradas from '@/ui/dashboard/modulos/TagsCadastradas/TagsCadastradas';
+import DependentesCadastrados from '@/ui/user/dashboard/DependentesCadastrados/DependentesCadastrados';
+import AtividadesRegistradas from '@/ui/user/dashboard/AtividadesRegitradas/AtividadesRegistradas';
+import TagsCadastradas from '@/ui/user/dashboard/TagsCadastradas/TagsCadastradas';
 import styles from './page.module.css';
 import LinkButton from "@/ui/LinkButton";
 

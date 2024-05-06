@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 import {Typography} from "@mui/joy";
-import FormChamado from "@/ui/dashboard/FormChamado/FormChamado";
+import FormChamado from "@/ui/user/FormChamado/FormChamado";
 import {ArrowBack} from "@mui/icons-material";
 import Link from "next/link";
 
