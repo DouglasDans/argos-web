@@ -19,6 +19,7 @@ const theme = extendTheme({
                body: '#F4F4F5',
                level1: '#fff',
                level2: '#d9d9d9',
+               level3: '#F4F4F5'
             },
             primary: {
                '50': '#FFF3DB',
@@ -46,6 +47,7 @@ const theme = extendTheme({
                body: '#000',
                level1: '#000',
                level2: '#d9d9d9',
+               level3: '#000'
             },
             primary: {
                '50': '#FFFFB6',
