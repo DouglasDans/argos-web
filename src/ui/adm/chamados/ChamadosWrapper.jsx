@@ -1,8 +1,21 @@
 import ChamadoItem from "./ChamadoItem";
+import styles from './chamadosWrapper.module.css'
 
 export default function ChamadosWrapper(){
     return (
-        <div className="flex flex-wrap">
+        <div className={styles.container}>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
+            <ChamadoItem/>
             <ChamadoItem/>
         </div>
     )

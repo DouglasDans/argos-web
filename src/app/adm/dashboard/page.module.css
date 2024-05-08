@@ -2,7 +2,7 @@
     display: grid;
     grid-template-areas: 'buttons activity chamados';
     grid-template-columns: 30% 1fr 30%;
-    gap: 10px
+    gap: 10px;
 }
 
 .buttonsContainer{
