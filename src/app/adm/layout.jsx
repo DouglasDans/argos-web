@@ -18,8 +18,8 @@ export default function RootLayout({ modal, children }) {
         <div className="flex items-center gap-5">
           <Image className={"rounded-full"} src="/profile.png" height={'70'} width={"70"} alt="Sua foto de perfil" />
           <div>
-            <Typography level="title-md">Marcelo da Silva</Typography>
-            <Typography level="body-md">Apartmento 01-B</Typography>
+            <Typography level="title-md">Adminstrador</Typography>
+            {/* <Typography level="body-md">Apartmento 01-B</Typography> */}
           </div>
         </div>
         <div className={"flex items-center"}>

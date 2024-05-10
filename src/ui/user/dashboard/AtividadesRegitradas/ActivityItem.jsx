@@ -1,5 +1,4 @@
 import React from 'react'
-import {ContainerLevel2} from "@/ui/containers/ContainerLevel2";
 import {Typography} from "@mui/joy";
 
 import styles from './ActivityItem.module.css';
