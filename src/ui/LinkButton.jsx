@@ -15,8 +15,8 @@ export default function LinkButton(
          <Button
             aria-label={ariaLabel}
             variant={variant}
+            fullWidth
             color={color}
-            fullwidth
          >
             {children}
          </Button>
