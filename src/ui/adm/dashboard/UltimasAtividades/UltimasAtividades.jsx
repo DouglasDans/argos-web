@@ -7,7 +7,7 @@ export default function UltimasAtividades() {
       <ContainerLevel1 className={'h-full w-full p-4 flex flex-col gap-3'}>
          <Typography level={'title-lg'}>Últimas Atividades</Typography>
 
-         <Table stripe={'odd'}>
+         <Table>
             <thead>
                <tr>
                   <th>TagID</th>
