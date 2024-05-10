@@ -25,9 +25,9 @@ export default function TrancaTable() {
                <td>2132</td>
                <td>Portão Principal</td>
                <td>
-                  <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
+                  <LinkButton color='neutral' fullwidth variant='soft' href={'/adm/trancas/2132/editar'}>
                      <Edit/>
-                  </Button>
+                  </LinkButton>
                </td>
                <td>
                   <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>

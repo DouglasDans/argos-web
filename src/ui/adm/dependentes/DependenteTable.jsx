@@ -29,9 +29,9 @@ export default function DependenteTable(){
                   <td>243.234.23</td>
                   <td>1-A</td>
                   <td>
-                     <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
+                     <LinkButton color='neutral' fullwidth variant='soft' href={'/adm/dependentes/2132/editar'}>
                         <Edit/>
-                     </Button>
+                     </LinkButton>
                   </td>
                   <td>
                      <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>

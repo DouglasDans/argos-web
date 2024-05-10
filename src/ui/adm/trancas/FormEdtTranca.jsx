@@ -1,11 +1,11 @@
 import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
 import {Button, Input, Typography} from "@mui/joy";
 
-export default function FormAddTranca(){
+export default function FormEdtTranca({id}){
    return (
       <ContainerLevel1 className={' p-4 flex flex-col gap-5'}>
          <Typography level={'h4'}>
-            Adicionar Tranca
+            Editar Tranca
          </Typography>
 
          <div className={'flex flex-col gap-2'}>
@@ -21,7 +21,7 @@ export default function FormAddTranca(){
                   <Input placeholder={'Ex: Portão Principal'} name={'txtLocalidade'} type={'text'}/>
                </div>
 
-               <Button type={'submit'}>Solicitar</Button>
+               <Button type={'submit'}>Confirmar Alteração</Button>
             </form>
          </div>
       </ContainerLevel1>

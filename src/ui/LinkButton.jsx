@@ -7,13 +7,16 @@ export default function LinkButton(
       children,
       href,
       ariaLabel = "Botão com um link",
-      variant = "solid"
+      variant = "solid",
+      color = "primary"
    }) {
    return (
       <Link href={href}>
          <Button
             aria-label={ariaLabel}
-            fullWidth variant={variant}
+            variant={variant}
+            color={color}
+            fullwidth
          >
             {children}
          </Button>

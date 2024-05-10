@@ -1,5 +1,4 @@
 import {Table, Typography} from "@mui/joy";
-import ActivityItem from "@/ui/user/dashboard/AtividadesRegitradas/ActivityItem";
 import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
 import React from "react";
 

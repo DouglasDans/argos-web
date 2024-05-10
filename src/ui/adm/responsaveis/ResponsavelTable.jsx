@@ -31,9 +31,9 @@ export default function ResponsavelTable() {
                   <td>1-A</td>
                   <td>5</td>
                   <td>
-                     <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
+                     <LinkButton color='neutral' fullwidth variant='soft' href={'/adm/responsaveis/2132/editar'}>
                         <Edit/>
-                     </Button>
+                     </LinkButton>
                   </td>
                   <td>
                      <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
