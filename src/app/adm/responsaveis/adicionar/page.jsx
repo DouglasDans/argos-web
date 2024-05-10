@@ -15,7 +15,7 @@ export default function AdicionarResponsavel(){
                </Link>
                <Typography level={'h2'}>Dashboard</Typography>
             </div>
-            <Typography level={'body-md'} className={'pl-9'}>Dashboard/Gerenciar Responsáveis/ Adicionar Responsável</Typography>
+            <Typography level={'body-md'} className={'pl-9'}>Dashboard / Gerenciar Responsáveis/ Adicionar Responsável</Typography>
          </div>
 
          <FormAddResponsavel/>
