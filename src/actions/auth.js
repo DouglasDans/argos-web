@@ -1,4 +1,5 @@
 import {redirect} from "next/navigation";
+import {createSession} from "@/lib/session";
 
 export default async function authAction(formData){
    'use server'
@@ -21,9 +22,11 @@ export default async function authAction(formData){
 
    if (responseAuth.auth) {
       if (responseAuth.type === 'administrador') {
+         await createSession(responseAuth.id, responseAuth.type)
          redirect('/adm/dashboard')
       }
       if (responseAuth.type === 'responsavel') {
+         await createSession(responseAuth.id, responseAuth.type)
          redirect('/user/dashboard')
       }
    } else {

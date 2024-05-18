@@ -1,8 +1,8 @@
-import { Button, Typography } from "@mui/joy";
+import {Button, Typography} from "@mui/joy";
 
 import styles from './layout.module.css'
 import Image from "next/image";
-import { Logout } from "@mui/icons-material";
+import {Logout} from "@mui/icons-material";
 import Link from "next/link";
 import ToggleColorButton from "@/ui/ToggleColorButton";
 

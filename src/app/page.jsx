@@ -3,8 +3,12 @@ import styles from './page.module.css'
 import { Button, FormControl, FormHelperText, FormLabel, Input, Typography } from '@mui/joy';
 import Logo from "@/ui/Logo";
 import authAction from '@/actions/auth';
+import sessionVerify from "@/utils/sessionVerify";
 
 export default function Home() {
+
+  sessionVerify()
+
   return (
     <div className={styles.bodyContainer}>
       <ContainerLevel1 className={"flex flex-col justify-between items-center h-auto w-2/5 p-10 gap-5 " + styles.loginContainer}>
