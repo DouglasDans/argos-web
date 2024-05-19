@@ -28,11 +28,17 @@ export async function createSession(userId, typeUser) {
    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
    const session = await encrypt({ userId, typeUser, expiresAt })
 
-   cookies().set('session', session, {
+   console.log(userId,typeUser)
+
+   await cookies().set('session', session, {
       httpOnly: true,
       secure: true,
       expires: expiresAt,
       sameSite: 'lax',
-      path: `/${typeUser === 'administrador' ? 'adm' : 'user'}/dashboard`,
+      typeUser,
+      userId,
+      path: `/`,
    })
+
+
 }

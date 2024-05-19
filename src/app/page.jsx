@@ -3,11 +3,8 @@ import styles from './page.module.css'
 import { Button, FormControl, FormHelperText, FormLabel, Input, Typography } from '@mui/joy';
 import Logo from "@/ui/Logo";
 import authAction from '@/actions/auth';
-import sessionVerify from "@/utils/sessionVerify";
 
 export default function Home() {
-
-  sessionVerify()
 
   return (
     <div className={styles.bodyContainer}>

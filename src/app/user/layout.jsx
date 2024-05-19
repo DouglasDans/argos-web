@@ -5,13 +5,24 @@ import Image from "next/image";
 import {Logout} from "@mui/icons-material";
 import Link from "next/link";
 import ToggleColorButton from "@/ui/ToggleColorButton";
+import { verifySession } from "@/lib/dal";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Dashboard - Argos Security",
   description: "Argos Security - Segurança para seu Apto",
 };
 
-export default function RootLayout({ modal, children }) {
+export default async function RootLayout({ modal, children }) {
+  const session = await verifySession()
+
+  console.log(session)
+
+  if (!session.isAuth || session.typeUser !== 'responsavel') {
+     redirect("/redirect")
+  }
+
+
   return (
     <div className={styles.layoutContainer}>
       <nav className="flex justify-between">
@@ -24,7 +35,7 @@ export default function RootLayout({ modal, children }) {
         </div>
         <div className={"flex items-center"}>
             <ToggleColorButton/>
-            <Link aria-label="Botão para sair da sua conta no sistema" href={'/'}>
+            <Link aria-label="Botão para sair da sua conta no sistema" href={'/logout'}>
               <Button variant="outlined" color="neutral" startDecorator={<Logout/>}>Sair</Button>
             </Link>
         </div>
