@@ -1,6 +1,5 @@
 import {redirect} from "next/navigation";
 import {createSession} from "@/lib/session";
-import {cookies} from "next/headers";
 
 export default async function authAction(formData){
    'use server'

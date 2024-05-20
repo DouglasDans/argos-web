@@ -7,6 +7,7 @@ import Link from "next/link";
 import ToggleColorButton from "@/ui/ToggleColorButton";
 import { verifySession } from "@/lib/dal";
 import { redirect } from "next/navigation";
+import { get } from "@/lib/api";
 
 export const metadata = {
   title: "Dashboard - Argos Security",
@@ -16,12 +17,13 @@ export const metadata = {
 export default async function RootLayout({ modal, children }) {
   const session = await verifySession()
 
-  console.log(session)
-
   if (!session.isAuth || session.typeUser !== 'responsavel') {
      redirect("/redirect")
   }
 
+  const userData = await get(`responsavel/${session.userId}`).then(res => {
+    return res.data
+  })
 
   return (
     <div className={styles.layoutContainer}>
@@ -29,8 +31,8 @@ export default async function RootLayout({ modal, children }) {
         <div className="flex items-center gap-5">
           <Image className={"rounded-full"} src="/profile.png" height={'70'} width={"70"} alt="Sua foto de perfil" />
           <div>
-            <Typography level="title-md">Marcelo da Silva</Typography>
-            <Typography level="body-md">Apartmento 01-B</Typography>
+            <Typography level="title-md">{userData.nome}</Typography>
+            <Typography level="body-md">{userData.apto}</Typography>
           </div>
         </div>
         <div className={"flex items-center"}>
