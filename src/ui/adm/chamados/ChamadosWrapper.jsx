@@ -1,22 +1,18 @@
+import { get } from "@/lib/api";
 import ChamadoItem from "./ChamadoItem";
 import styles from './chamadosWrapper.module.css'
 
-export default function ChamadosWrapper(){
+export default async function ChamadosWrapper(){
+
+    const chamados = await get('chamado').then(res => {
+        return res.data
+    })
+
     return (
         <div className={styles.container}>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
-            <ChamadoItem/>
+            {chamados.map((chamado, key) => {
+                return(<ChamadoItem key={key}/>)
+            })}
         </div>
     )
 }
