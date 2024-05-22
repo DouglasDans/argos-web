@@ -5,6 +5,7 @@ import styles from './chamadosWrapper.module.css'
 export default async function ChamadosWrapper(){
 
     const chamados = await get('chamado').then(res => {
+        console.log(res.data);
         return res.data
     })
 

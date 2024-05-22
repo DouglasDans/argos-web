@@ -3,8 +3,16 @@ import LinkButton from "@/ui/LinkButton";
 import {Button, Table} from "@mui/joy";
 import {Delete, Edit} from "@mui/icons-material";
 import React from "react";
+import {get} from "@/lib/api";
 
-export default function DependenteTable(){
+export default async function DependenteTable(){
+
+   const responsaveis = await get('dependente').then(res => {
+      return res.data
+   })
+
+   console.log(responsaveis)
+
    return (
       <ContainerLevel1 className="p-4 flex flex-col gap-4">
          <div className={'w-5'}>
