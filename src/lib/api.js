@@ -43,3 +43,27 @@ export async function post(endpoint, body) {
    }
 }
 
+export async function patch(endpoint, body) {
+
+   try {
+      let inserir = await fetch(BASE_URL + endpoint, {
+         method: "PATCH",
+         headers: {
+            "Content-Type": "application/json"
+         },
+         body: JSON.stringify(body)
+      })
+
+      const dados = await inserir.json();
+
+      return  {
+         dados: dados
+      }
+   } catch (error) {
+      console.log();
+      return {
+         error: error.message
+      }
+   }
+}
+
