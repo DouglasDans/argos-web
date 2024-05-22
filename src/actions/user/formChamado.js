@@ -21,11 +21,17 @@ export default async function formChamado(e){
       }
    }
 
-   const resposta = await post(`chamado?userId=${1}`, body)
+   const resposta = {
+      success: true,
+      res: await post(`chamado?userId=${1}`, body)
+   }
 
-   if (resposta.error) {
+   if (resposta.res.error) {
+      resposta.success = false
       console.error(resposta.error)
    } else {
-      console.log(resposta.data)
+      console.log(resposta.res.data)
    }
+
+   return resposta
 }

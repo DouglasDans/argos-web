@@ -10,8 +10,8 @@ export default async function ChamadosWrapper(){
 
     return (
         <div className={styles.container}>
-            {chamados.map((chamado, key) => {
-                return(<ChamadoItem key={key}/>)
+            {await chamados.map((chamado, key) => {
+                return(<ChamadoItem chamado={chamado} key={key}/>)
             })}
         </div>
     )

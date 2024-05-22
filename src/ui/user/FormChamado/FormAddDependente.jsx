@@ -1,10 +1,40 @@
 import formChamado from "@/actions/user/formChamado";
-import {Button, Input, Typography} from "@mui/joy";
+import { Done, Error } from "@mui/icons-material";
+import {Button, Input, Snackbar, Typography} from "@mui/joy";
+import { useState } from "react";
 
 export default function FormAddDependente(){
 
+   const [snackbarState, setSnackbarState] = useState({
+      open: false
+   })
+
+   async function formChamadoSnackBar(e){
+      const res = formChamado(e)
+
+      if ((await res).success) {
+         setSnackbarState({
+            open: true,
+            startDecorator: <Done/>,
+            color: "success"
+         })
+      } else {
+         setSnackbarState({
+            open: true,
+            startDecorator: <Error/>,
+            color: "success"
+         })
+      }
+      
+      setTimeout(() => {
+         setSnackbarState({
+            open: false
+         })
+      }, 7000)
+   }
+
    return (
-      <form onSubmit={formChamado} className={'flex flex-col gap-5'}>
+      <form onSubmit={formChamadoSnackBar} className={'flex flex-col gap-5'}>
          <input type="hidden" name={'tipoChamado'} value={'dependente'}/>
          <input type="hidden" name={'responsavel'} value={'1'}/>
 
@@ -17,6 +47,10 @@ export default function FormAddDependente(){
             <Typography level={'body-lg'}>RG do Dependente</Typography>
             <Input placeholder={'XX.XXX.XX-X'} name={'txtRgDependente'} type={'text'}/>
          </div>
+
+         <Snackbar color={snackbarState.color} variant="solid" startDecorator={snackbarState.startDecorator} open={snackbarState.open}>
+            Chamado cadastrado com sucesso
+         </Snackbar>
 
          <Button type={'submit'}>Solicitar</Button>
       </form>
