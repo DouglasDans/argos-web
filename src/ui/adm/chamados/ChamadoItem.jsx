@@ -3,8 +3,6 @@ import { Typography, Button} from "@mui/joy";
 
 export default async function ChamadoItem({chamado}){
 
-    
-
     return(
         <ContainerLevel3 className="flex flex-col gap-2 flex-wrap w-80 justify-between">
             <div>

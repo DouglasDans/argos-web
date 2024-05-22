@@ -7,11 +7,9 @@ import {get} from "@/lib/api";
 
 export default async function DependenteTable(){
 
-   const responsaveis = await get('dependente').then(res => {
+   const dependentes = await get('dependente').then(res => {
       return res.data
    })
-
-   console.log(responsaveis)
 
    return (
       <ContainerLevel1 className="p-4 flex flex-col gap-4">
@@ -31,22 +29,26 @@ export default async function DependenteTable(){
                </tr>
             </thead>
             <tbody>
-               <tr>
-                  <td>2132</td>
-                  <td>Fulano</td>
-                  <td>243.234.23</td>
-                  <td>1-A</td>
-                  <td>
-                     <LinkButton color='neutral' fullwidth variant='soft' href={'/adm/dependentes/2132/editar'}>
-                        <Edit/>
-                     </LinkButton>
-                  </td>
-                  <td>
-                     <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
-                        <Delete/>
-                     </Button>
-                  </td>
-               </tr>
+            {dependentes.map(dependente => {
+               return (
+                  <tr key={dependente.id}>
+                     <td>{dependente.id}</td>
+                     <td>{dependente.nome}</td>
+                     <td>{dependente.rg}</td>
+                     <td>1-A</td>
+                     <td>
+                        <LinkButton color='neutral' fullwidth variant='soft' href={`/adm/dependentes/${dependente.id}/editar`}>
+                           <Edit/>
+                        </LinkButton>
+                     </td>
+                     <td>
+                        <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
+                           <Delete/>
+                        </Button>
+                     </td>
+                  </tr>
+               )
+            })}
             </tbody>
          </Table>
       </ContainerLevel1>
