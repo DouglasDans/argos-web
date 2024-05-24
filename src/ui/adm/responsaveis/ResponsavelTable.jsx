@@ -4,10 +4,11 @@ import { Button, Table } from "@mui/joy";
 import {Delete, Edit, History} from "@mui/icons-material";
 import React from "react";
 import { get } from "@/lib/api";
+import axios from "axios";
 
 export default async function ResponsavelTable() {
 
-   const responsaveis = await get('responsavel').then(res => {
+   const responsaveis = await axios.get('http://localhost:8080/api/v1/responsaveis').then(res =>{
       return res.data
    })
 

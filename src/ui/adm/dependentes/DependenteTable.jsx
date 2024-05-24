@@ -4,10 +4,11 @@ import {Button, Table} from "@mui/joy";
 import {Delete, Edit} from "@mui/icons-material";
 import React from "react";
 import {get} from "@/lib/api";
+import axios from "axios";
 
 export default async function DependenteTable(){
 
-   const dependentes = await get('dependente').then(res => {
+   const chamados = await axios.get('http://localhost:8080/api/v1/dependente').then(res =>{
       return res.data
    })
 
