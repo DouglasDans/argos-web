@@ -1,12 +1,18 @@
-'use client'
 
-import CardWrapper from "@/ui/containers/CardWrapper";
+
+import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
 import { ArrowBack, History } from "@mui/icons-material";
 import { Table, Typography } from "@mui/joy";
 import Link from "next/link";
 import { Fragment } from "react";
+import axios from "axios";
 
-export default function Historico({ params }) {
+export default async function Historico({ params }) {
+
+   const historico = await axios.get(`http://localhost:8080/api/v1/historico/tag/${params.id}`).then(res =>{
+      return res.data
+   })
+
    return (
       <Fragment>
          <div className='title flex items-center gap-3'>
@@ -19,7 +25,7 @@ export default function Historico({ params }) {
             <Typography level={'body-sm'}></Typography>
          </div>
 
-         <CardWrapper className="p-4 flex flex-col gap-4">
+         <ContainerLevel1 className="p-4 flex flex-col gap-4">
 
             <div className="flex gap-2">
                <History/>
@@ -39,22 +45,20 @@ export default function Historico({ params }) {
                   </tr>
                </thead>
                <tbody>
-                  <tr>
-                     <td>1</td>
-                     <td>João</td>
-                     <td>123456789</td>
-                     <td>2021-02-20</td>
-                  </tr>
-                  <tr>
-                     <td>2</td>
-                     <td>Maria</td>
-                     <td>987654321</td>
-                     <td>2023-06-22</td>
-                  </tr>   
+                  {historico.map(historicoItem => {
+                     return (
+                        <tr key={historicoItem.id}>
+                           <td>{historicoItem.tag.id}</td>
+                           <td>{historicoItem.dependente?.nome ? historicoItem.dependente.nome : "Indefinido"}</td>
+                           <td>{historicoItem.dependente?.rg ? historicoItem.dependente.rg : "Indefinido"}</td>
+                           <td>{historicoItem.timestamp}</td>
+                        </tr>
+                     )
+                  })}
                </tbody>
             </Table>
-         </CardWrapper>
-         
+         </ContainerLevel1>
+
       </Fragment>
 
    )
