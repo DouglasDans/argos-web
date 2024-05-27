@@ -3,8 +3,15 @@ import LinkButton from "@/ui/LinkButton";
 import { Button, Table } from "@mui/joy";
 import {Delete, Edit, History} from "@mui/icons-material";
 import React from "react";
+import { get } from "@/lib/api";
+import axios from "axios";
 
-export default function ResponsavelTable() {
+export default async function ResponsavelTable() {
+
+   const responsaveis = await axios.get('http://localhost:8080/api/v1/responsavel').then(res =>{
+      return res.data
+   })
+
    return (
       <ContainerLevel1 className="p-4 flex flex-col gap-4">
          <div>
@@ -24,23 +31,27 @@ export default function ResponsavelTable() {
                </tr>
             </thead>
             <tbody>
-               <tr>
-                  <td>2132</td>
-                  <td>Fulano</td>
-                  <td>243.234.23</td>
-                  <td>1-A</td>
-                  <td>5</td>
-                  <td>
-                     <LinkButton color='neutral' fullwidth variant='soft' href={'/adm/responsaveis/2132/editar'}>
-                        <Edit/>
-                     </LinkButton>
-                  </td>
-                  <td>
-                     <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
-                        <Delete/>
-                     </Button>
-                  </td>
-               </tr>
+               {responsaveis.map((responsavel) => {
+                  return(
+                     <tr key={responsavel.id}>
+                        <td>{responsavel.id}</td>
+                        <td>{responsavel.nome}</td>
+                        <td>{responsavel.rg}</td>
+                        <td>{responsavel.apto}</td>
+                        <td>5</td>
+                     <td>
+                        <LinkButton color='neutral' fullwidth variant='soft' href={`/adm/responsaveis/${responsavel.id}/editar`}>
+                           <Edit/>
+                        </LinkButton>
+                     </td>
+                     <td>
+                        <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
+                           <Delete/>
+                        </Button>
+                     </td>
+                  </tr>
+                  )
+               })}
             </tbody>
          </Table>
       </ContainerLevel1>

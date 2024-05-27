@@ -5,6 +5,7 @@ import Logo from "@/ui/Logo";
 import authAction from '@/actions/auth';
 
 export default function Home() {
+
   return (
     <div className={styles.bodyContainer}>
       <ContainerLevel1 className={"flex flex-col justify-between items-center h-auto w-2/5 p-10 gap-5 " + styles.loginContainer}>

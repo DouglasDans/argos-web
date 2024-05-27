@@ -14,7 +14,7 @@ export default function Historico(){
                </Link>
                <Typography level={'h2'}>Dashboard</Typography>
             </div>
-            <Typography level={'body-md'} className={'pl-9'}>Dashboard / Gerenciar Trancas</Typography>
+            <Typography level={'body-md'} className={'pl-9'}>Dashboard / Histórico</Typography>
          </div>
          <HistoricoTable/>
       </Fragment>

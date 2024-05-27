@@ -10,7 +10,7 @@ export default function FormAddDependente(){
 
          <div className={'flex flex-col gap-2'}>
 
-            <form  className={'flex flex-col gap-5'}>
+            <form className={'flex flex-col gap-5'}>
 
                <div className={'flex flex-col gap-2'}>
                   <Typography level={'body-lg'}>Nome do Dependente</Typography>

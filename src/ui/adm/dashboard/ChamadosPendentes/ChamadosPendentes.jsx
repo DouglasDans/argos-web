@@ -15,8 +15,8 @@ export default function ChamadosPendentes() {
             <ContainerLevel3 className="flex justify-between w-full">
                <div className="flex flex-col">
                   <Typography level="title-md">Cadastro de Tag</Typography>
-                  <small>Tipo: Permanente</small>
-                  <small>Responsável: Fulado</small>
+                  <Typography level="body-sm">Tipo: Permanente</Typography>
+                  <Typography level="body-sm">Responsável: Fulado</Typography>
                </div>
 
                <div className="flex flex-col justify-center">
@@ -24,13 +24,12 @@ export default function ChamadosPendentes() {
                </div>
             </ContainerLevel3>
          </div>
-         
          <div className={'flex felx-col'}>
             <ContainerLevel3 className="flex justify-between w-full">
                <div className="flex flex-col">
                   <Typography level="title-md">Cadastro de Tag</Typography>
-                  <small>Tipo: Permanente</small>
-                  <small>Responsável: Fulado</small>
+                  <Typography level="body-sm">Tipo: Permanente</Typography>
+                  <Typography level="body-sm">Responsável: Fulado</Typography>
                </div>
 
                <div className="flex flex-col justify-center">
@@ -38,6 +37,7 @@ export default function ChamadosPendentes() {
                </div>
             </ContainerLevel3>
          </div>
+
       </ContainerLevel1>
    )
 }

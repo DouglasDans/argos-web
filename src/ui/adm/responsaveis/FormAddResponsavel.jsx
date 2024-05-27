@@ -1,6 +1,7 @@
 import ContainerLevel1 from '@/ui/containers/ContainerLevel1'
 import { Button, Input, Typography } from '@mui/joy'
 import React from 'react'
+import formAddResponsavel from "@/actions/adm/formAddResponsavel";
 
 export default function FormAddResponsavel() {
    return (
@@ -10,7 +11,7 @@ export default function FormAddResponsavel() {
          </Typography>
 
          <div className={'flex flex-col gap-2'}>
-            <form  className={'flex flex-col gap-5'}>
+            <form action={formAddResponsavel} className={'flex flex-col gap-5'}>
                <div className={'flex flex-col gap-2'}>
                   <Typography level={'body-lg'}>Nome do Responsável</Typography>
                   <Input placeholder={'Ex. Fulano de Tal'} name={'txtNomeResponsavel'} type={'text'}/>

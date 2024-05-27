@@ -1,40 +1,20 @@
 'use client'
 
 import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
-import {Box, Button, FormLabel, Input, Radio, RadioGroup, Sheet, Textarea, Typography} from "@mui/joy";
+import { Radio, RadioGroup, Sheet, Typography} from "@mui/joy";
 import style from './FormChamado.module.css';
 import {Fragment, useState} from "react";
+import FormTag from "@/ui/user/FormChamado/FormTag";
+import FormAddDependente from "@/ui/user/FormChamado/FormAddDependente";
 
 const formOptions = {
    tag : <Fragment>
-      <form method={'GET'} className={'flex flex-col gap-5'}>
-         <input type="hidden" name={'tipoChamado'} value={'tag'}/>
-
-         <div className={'flex flex-col gap-2'}>
-            <Typography level={'body-lg'}>Motivo do chamado</Typography>
-            <Textarea name={'txtmotivoChamado'} placeholder={"Ex. Perdi minha TAG antiga"}></Textarea>
-         </div>
-
-         <Button type={'submit'}>Solicitar</Button>
-      </form>
+      <FormTag/>
    </Fragment>,
-   dependente : <Fragment>
-      <form method={'GET'} className={'flex flex-col gap-5'}>
-         <input type="hidden" name={'tipoChamado'} value={'dependente'}/>
-
-         <div className={'flex flex-col gap-2'}>
-            <Typography level={'body-lg'}>Nome do Dependente</Typography>
-            <Input placeholder={'Ex. Fulano de Tal'} name={'txtNomeDependente'} type={'text'}/>
-         </div>
-
-         <div className={'flex flex-col gap-2'}>
-            <Typography level={'body-lg'}>RG do Dependente</Typography>
-            <Input placeholder={'XX.XXX.XX-X'} name={'txtRgDependente'} type={'text'}/>
-         </div>
-
-         <Button type={'submit'}>Solicitar</Button>
-      </form>
-   </Fragment>,
+   dependente :
+      <Fragment>
+         <FormAddDependente/>
+      </Fragment>,
 }
 
 

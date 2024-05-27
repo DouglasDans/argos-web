@@ -4,7 +4,7 @@ import {Typography} from "@mui/joy";
 import {Fragment} from "react";
 import FormEdtResponsavel from "@/ui/adm/responsaveis/FormEdtResponsavel";
 
-export default function EditarResponsavel(){
+export default function EditarResponsavel({params}){
    return(
       <Fragment>
          <div className='title flex flex-col'>
@@ -17,7 +17,7 @@ export default function EditarResponsavel(){
             <Typography level={'body-md'} className={'pl-9'}>Dashboard / Gerenciar Responsáveis / Editar Responsável</Typography>
          </div>
 
-         <FormEdtResponsavel/>
+         <FormEdtResponsavel id={params.id}/>
       </Fragment>
    )
 }
