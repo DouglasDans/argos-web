@@ -8,7 +8,7 @@ import axios from "axios";
 
 export default async function DependenteTable(){
 
-   const chamados = await axios.get('http://localhost:8080/api/v1/dependente').then(res =>{
+   const dependentes = await axios.get('http://localhost:8080/api/v1/dependente').then(res =>{
       return res.data
    })
 

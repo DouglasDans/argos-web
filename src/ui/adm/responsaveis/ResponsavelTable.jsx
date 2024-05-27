@@ -8,7 +8,7 @@ import axios from "axios";
 
 export default async function ResponsavelTable() {
 
-   const responsaveis = await axios.get('http://localhost:8080/api/v1/responsaveis').then(res =>{
+   const responsaveis = await axios.get('http://localhost:8080/api/v1/responsavel').then(res =>{
       return res.data
    })
 

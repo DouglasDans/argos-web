@@ -1,7 +1,6 @@
 import {Table, Typography} from "@mui/joy";
 import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
 import React from "react";
-import {get} from "@/lib/api";
 import axios from "axios";
 
 export default async function HistoricoTable(){
@@ -27,16 +26,16 @@ export default async function HistoricoTable(){
             </thead>
             <tbody>
                {historico.map(historicoItem => {
-                  // return (
-                  //    <tr key={historicoIte}>
-                  //       <td>2132</td>
-                  //       <td>Fulano</td>
-                  //       <td>243.234.23</td>
-                  //       <td>Marcel da Silva</td>
-                  //       <td>233.321.12</td>
-                  //       <td>10/03/2024 14h13m45s</td>
-                  //    </tr>
-                  // )
+                  return (
+                     <tr key={historicoItem.id}>
+                        <td>{historicoItem.tag.id}</td>
+                        <td>{historicoItem.tag.dependente?.nome ? historicoItem.tag.dependente.nome : "Indefinido"}</td>
+                        <td>{historicoItem.tag.dependente?.rg ? historicoItem.tag.dependente.rg : "Indefinido"}</td>
+                        <td>{historicoItem.tag.responsavel?.nome ? historicoItem.tag.responsavel.nome : "Indefinido"}</td>
+                        <td>{historicoItem.tag.responsavel?.rg ? historicoItem.tag.responsavel.rg : "Indefinido"}</td>
+                        <td>{historicoItem.timestamp}</td>
+                     </tr>
+                  )
                })}
             </tbody>
          </Table>
