@@ -2,7 +2,7 @@
 
 import formAddTranca from "@/actions/adm/formAddTranca";
 import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
-import { Done } from "@mui/icons-material";
+import { Done, Error } from "@mui/icons-material";
 import {Button, Input, Snackbar, Typography} from "@mui/joy";
 import { useState } from "react";
 
@@ -14,6 +14,8 @@ export default function FormAddTranca(){
    })
 
    async function formSnackBar(e){
+      e.preventDefault()
+
       const res = formAddTranca(e)
 
       if ((await res).success) {

@@ -1,17 +1,17 @@
 import apiRequest from "@/lib/api"
-import axios from "axios"
 
-export default async function formAddTranca(e){
+export default async function formEditTranca(e){
     const formData = e.target
 
     const body = {
-        idRegistroTranca: formData.txtIdRegistro.value,
-        localidade: formData.txtLocalidade.value
+         id: formData.txtIdTranca.value,
+         idRegistroTranca: formData.txtIdRegistro.value,
+         localidade: formData.txtLocalidade.value
     }
 
    const resposta = {
       success: true,
-      res: await apiRequest.post(`tranca`, body)
+      res: await apiRequest.patch(`tranca`, body)
    }
 
    if (resposta.res.error) {
