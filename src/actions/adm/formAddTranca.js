@@ -1,16 +1,18 @@
 import axios from "axios"
 
-export default async function formAddTranca(formData) {
-  'use server'
+export default async function formAddTranca(e){
+    e.preventDefault()
 
-   const requestFormData = {
-      registro: formData.get('txtIdRegistro'),
-      localidade: formData.get('txtLocalidade'),
-   }
-   
+    const formData = e.target
+
+    const body = {
+        idRegistroTranca: formData.txtIdRegistro.value,
+        localidade: formData.txtLocalidade.value
+    }
+
    const resposta = {
       success: true,
-      res: await axios.post("http://localhost:8080/api/v1/tranca", requestFormData)
+      res: await axios.post(`http://localhost:8080/api/v1/tranca`, body)
    }
 
    if (resposta.res.error) {

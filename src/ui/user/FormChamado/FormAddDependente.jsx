@@ -16,13 +16,15 @@ export default function FormAddDependente(){
          setSnackbarState({
             open: true,
             startDecorator: <Done/>,
-            color: "success"
+            color: "success",
+            message: "Chamado cadastrado com sucesso"
          })
       } else {
          setSnackbarState({
             open: true,
             startDecorator: <Error/>,
-            color: "success"
+            color: "success",
+            message: "Não foi possível cadastrar o chamado, tente novamente mais tarde"
          })
       }
       
@@ -49,7 +51,7 @@ export default function FormAddDependente(){
          </div>
 
          <Snackbar color={snackbarState.color} variant="solid" startDecorator={snackbarState.startDecorator} open={snackbarState.open}>
-            Chamado cadastrado com sucesso
+            {snackbarState.message}
          </Snackbar>
 
          <Button type={'submit'}>Solicitar</Button>
