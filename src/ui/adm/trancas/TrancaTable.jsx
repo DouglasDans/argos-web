@@ -3,6 +3,7 @@ import LinkButton from "@/ui/LinkButton";
 import {Button, Table} from "@mui/joy";
 import {Delete, Edit} from "@mui/icons-material";
 import apiRequest from "@/lib/api";
+import ModalDeleteConfirm from "./ModalDeleteConfirm";
 
 
 export default async function TrancaTable() {
@@ -40,9 +41,7 @@ export default async function TrancaTable() {
                            </LinkButton>
                         </td>
                         <td>
-                           <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
-                              <Delete/>
-                           </Button>
+                           <ModalDeleteConfirm id={tranca.id}/>
                         </td>
                      </tr>
                   )
