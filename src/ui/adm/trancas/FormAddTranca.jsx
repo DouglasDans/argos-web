@@ -1,3 +1,4 @@
+import formAddTranca from "@/actions/adm/formAddTranca";
 import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
 import {Button, Input, Typography} from "@mui/joy";
 
@@ -9,7 +10,7 @@ export default function FormAddTranca(){
          </Typography>
 
          <div className={'flex flex-col gap-2'}>
-            <form  className={'flex flex-col gap-5'}>
+            <form action={formAddTranca}  className={'flex flex-col gap-5'}>
 
                <div className={'flex flex-col gap-2'}>
                   <Typography level={'body-lg'}>ID de registro físico</Typography>
