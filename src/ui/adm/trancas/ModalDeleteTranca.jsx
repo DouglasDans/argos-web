@@ -5,7 +5,7 @@ import { DeleteForever, Done, Error, Warning } from '@mui/icons-material'
 import { Button, DialogActions, DialogContent, DialogTitle, Divider, Modal, ModalDialog, Snackbar } from '@mui/joy'
 import React, { useState } from 'react'
 
-export default function ModalDeleteConfirm({id}) {
+export default function ModalDeleteTranca({id}) {
 
    const [snackbarState, setSnackbarState] = useState({
       open: false
@@ -13,29 +13,26 @@ export default function ModalDeleteConfirm({id}) {
    const [open, setOpen] = useState(false);
 
    async function deleteTranca(){
-      const resposta = {
-         success: true,
-         data: await apiRequest.delete(`tranca/${id}`)
-      }
-      
+      await apiRequest.delete(`tranca/${id}`)
+         .then(() => {
+            setSnackbarState({
+               open: true,
+               startDecorator: <Done/>,
+               color: "success",
+               message: "Dados deletados com sucesso!"
+            })
+         })
+         .catch(err => {
+            setSnackbarState({
+               open: true,
+               startDecorator: <Error/>,
+               color: "danger",
+               message: "Ocorreu um erro ao deletar os dados  -  " + err.message
+            })
+         })
+
       setOpen(false)
 
-      if (resposta.success) {
-         setSnackbarState({
-            open: true,
-            startDecorator: <Done/>,
-            color: "success",
-            message: "Tranca deletada com sucesso!"
-         })
-      } else {
-         setSnackbarState({
-            open: true,
-            startDecorator: <Error/>,
-            color: "danger",
-            message: "Ocorreu um erro ao deletar a tranca!"
-         })
-      }
-      
       setTimeout(() => {
          setSnackbarState({
             open: false

@@ -3,7 +3,7 @@ import LinkButton from "@/ui/LinkButton";
 import {Button, Table, Typography} from "@mui/joy";
 import {Delete, Edit} from "@mui/icons-material";
 import apiRequest from "@/lib/api";
-import ModalDeleteConfirm from "./ModalDeleteConfirm";
+import ModalDeleteTranca from "./ModalDeleteTranca";
 
 export default async function TrancaTable() {
 
@@ -41,7 +41,7 @@ export default async function TrancaTable() {
                            </LinkButton>
                         </td>
                         <td>
-                           <ModalDeleteConfirm id={tranca.id}/>
+                           <ModalDeleteTranca id={tranca.id}/>
                         </td>
                      </tr>
                   )
