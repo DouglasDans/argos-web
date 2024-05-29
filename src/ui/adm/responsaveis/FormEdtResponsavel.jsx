@@ -1,11 +1,11 @@
 import ContainerLevel1 from '@/ui/containers/ContainerLevel1'
 import { Button, Input, Typography } from '@mui/joy'
-import {get} from "@/lib/api";
+import apiRequest from "@/lib/api";
 import formEditResponsavel from "@/actions/adm/formEditResponsavel";
 
 export default async function FormEdtResponsavel({id}) {
 
-   const responsavel = await get(`responsavel/${id}`).then(res => {
+   const responsavel = await apiRequest.get(`responsavel/${id}`).then(res => {
       return res.data
    })
 

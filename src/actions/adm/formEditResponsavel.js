@@ -1,4 +1,4 @@
-import {patch, post} from "@/lib/api";
+import apiRequest, {patch, post} from "@/lib/api";
 
 export default async function formEditResponsavel(formData) {
   'use server'
@@ -12,7 +12,7 @@ export default async function formEditResponsavel(formData) {
 
    const resposta = {
       success: true,
-      res: await patch('responsavel', requestFormData)
+      res: await apiRequest.patch('responsavel', requestFormData)
    }
 
    if (resposta.res.error) {
