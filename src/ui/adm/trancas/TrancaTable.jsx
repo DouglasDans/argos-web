@@ -1,10 +1,9 @@
 import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
 import LinkButton from "@/ui/LinkButton";
-import {Button, Table} from "@mui/joy";
+import {Button, Table, Typography} from "@mui/joy";
 import {Delete, Edit} from "@mui/icons-material";
 import apiRequest from "@/lib/api";
 import ModalDeleteConfirm from "./ModalDeleteConfirm";
-
 
 export default async function TrancaTable() {
 
@@ -14,7 +13,8 @@ export default async function TrancaTable() {
 
    return (
       <ContainerLevel1 className="p-4 flex flex-col gap-4">
-         <div>
+         <div className={'flex justify-between items-center'}>
+            <Typography level={'h4'}>{trancas.length} Trancas cadastradas</Typography>
             <LinkButton href={'/adm/trancas/adicionar'}>Adicionar Trancas</LinkButton>
          </div>
 
