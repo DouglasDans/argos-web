@@ -4,6 +4,8 @@ import {Button, Table, Typography} from "@mui/joy";
 import {Delete, Edit} from "@mui/icons-material";
 import React from "react";
 import apiRequest from "@/lib/api";
+import ModalDeleteResponsavel from "@/ui/adm/responsaveis/ModalDeleteResponsavel";
+import ModalDeleteDependente from "@/ui/adm/dependentes/ModalDeleteDependente";
 
 export default async function DependenteTable(){
 
@@ -46,9 +48,7 @@ export default async function DependenteTable(){
                         </LinkButton>
                      </td>
                      <td>
-                        <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
-                           <Delete/>
-                        </Button>
+                        <ModalDeleteDependente id={dependente.id}/>
                      </td>
                   </tr>
                )
