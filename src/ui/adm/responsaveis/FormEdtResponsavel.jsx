@@ -7,6 +7,7 @@ import formEditResponsavel from "@/actions/adm/formEditResponsavel";
 import {useEffect, useState} from "react";
 import formEditTranca from "@/actions/adm/formEditTranca";
 import {Done, Error} from "@mui/icons-material";
+import formEditDependente from "@/actions/adm/formEditDependente";
 
 export default function FormEdtResponsavel({id}) {
 
@@ -29,7 +30,7 @@ export default function FormEdtResponsavel({id}) {
    async function formSnackBar(e){
       e.preventDefault()
 
-      formEditResponsavel(e)
+      formEditDependente(e)
          .then(() => {
             setSnackbarState({
                open: true,
