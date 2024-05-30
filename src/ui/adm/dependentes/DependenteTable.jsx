@@ -1,30 +1,32 @@
 import ContainerLevel1 from "@/ui/containers/ContainerLevel1";
 import LinkButton from "@/ui/LinkButton";
-import {Button, Table} from "@mui/joy";
+import {Button, Table, Typography} from "@mui/joy";
 import {Delete, Edit} from "@mui/icons-material";
 import React from "react";
-import {get} from "@/lib/api";
-import axios from "axios";
+import apiRequest from "@/lib/api";
 
 export default async function DependenteTable(){
 
-   const dependentes = await axios.get('http://localhost:8080/api/v1/dependente').then(res =>{
+   const dependentes = await apiRequest.get('dependente').then(res =>{
       return res.data
    })
 
    return (
       <ContainerLevel1 className="p-4 flex flex-col gap-4">
-         <div className={'w-5'}>
+
+         <div className={'flex justify-between items-center'}>
+            <Typography level={'h4'}>{dependentes.length} Dependentes cadastrados</Typography>
             <LinkButton href={'/adm/dependentes/adicionar'}>Adicionar Dependentes</LinkButton>
          </div>
 
          <Table>
             <thead>
-               <tr>
+            <tr>
                   <th>ID</th>
                   <th>Nome</th>
                   <th>RG</th>
                   <th>Apto</th>
+                  <th>Responsavel</th>
                   <th>Editar</th>
                   <th>Excluir</th>
                </tr>
@@ -36,7 +38,8 @@ export default async function DependenteTable(){
                      <td>{dependente.id}</td>
                      <td>{dependente.nome}</td>
                      <td>{dependente.rg}</td>
-                     <td>1-A</td>
+                     <td>{dependente.responsavel.apto}</td>
+                     <td>{dependente.responsavel.nome}</td>
                      <td>
                         <LinkButton color='neutral' fullwidth variant='soft' href={`/adm/dependentes/${dependente.id}/editar`}>
                            <Edit/>
