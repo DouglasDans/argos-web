@@ -1,13 +1,13 @@
-import apiRequest, {patch, post} from "@/lib/api";
+import apiRequest from "@/lib/api";
 
-export default async function formEditResponsavel(formData) {
-  'use server'
+export default async function formEditResponsavel(e) {
+   const formData = e.target
 
    const requestFormData = {
-      id: formData.get('idResponsavel'),
-      nome: formData.get('txtNomeResponsavel'),
-      rg: formData.get('txtRgResponsavel'),
-      apto: formData.get('txtAptoResponsavel')
+      id: formData.idResponsavel.value,
+      nome: formData.txtNomeResponsavel.value,
+      rg: formData.txtRgResponsavel.value,
+      apto: formData.txtAptoResponsavel.value
    }
 
    const resposta = {

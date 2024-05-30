@@ -1,12 +1,15 @@
 import apiRequest from "@/lib/api";
 
-export default async function formAddResponsavel(formData) {
-  'use server'
+export default async function formAddResponsavel(e) {
+   const formData = e.target
+
+   console.log(formData)
 
    const requestFormData = {
-      nome: formData.get('txtNomeResponsavel'),
-      rg: formData.get('txtRgResponsavel'),
-      apto: formData.get('txtAptoResponsavel')
+      id: formData.idResponsavel.value,
+      nome: formData.txtNomeResponsavel.value,
+      rg: formData.txtRgResponsavel.value,
+      apto: formData.txtAptoResponsavel.value
    }
    
    const resposta = {
