@@ -16,27 +16,27 @@ export default async function UltimasAtividades() {
          <Table>
             <thead>
                <tr>
-                  <th>TagID</th>
-                  <th>Dependente</th>
-                  <th>RG do Dependente</th>
-                  <th>Responsável</th>
-                  <th>Rg do Responsável</th>
-                  <th>Registro</th>
+                  <th>Id de registro</th>
+                  <th>TagId</th>
+                  <th>Responsavel</th>
+                  <th>RG do Responsavel</th>
+                  <th>Atividade</th>
+                  <th>Horário da atividade</th>
                </tr>
             </thead>
             <tbody>
                {historico.map(historicoItem => {
                      return (
                         <tr key={historicoItem.id}>
-                           <td>{historicoItem.tag.id}</td>
-                           <td>{historicoItem.tag.dependente?.nome ? historicoItem.tag.dependente.nome : "Indefinido"}</td>
-                           <td>{historicoItem.tag.dependente?.rg ? historicoItem.tag.dependente.rg : "Indefinido"}</td>
-                           <td>{historicoItem.tag.responsavel?.nome ? historicoItem.tag.responsavel.nome : "Indefinido"}</td>
-                           <td>{historicoItem.tag.responsavel?.rg ? historicoItem.tag.responsavel.rg : "Indefinido"}</td>
+                           <td>{historicoItem.id}</td>
+                           <td>{historicoItem.tag}</td>
+                           <td>{historicoItem.responsavel}</td>
+                           <td>{historicoItem.rgResponsavel}</td>
+                           <td>{historicoItem.typeAtividade}</td>
                            <td>{historicoItem.timestamp}</td>
                         </tr>
                      )
-                  })}
+               })}
             </tbody>
          </Table>
       </ContainerLevel1>
