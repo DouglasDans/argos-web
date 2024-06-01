@@ -6,10 +6,13 @@ import AtividadesRegistradas from '@/ui/user/dashboard/AtividadesRegitradas/Ativ
 import TagsCadastradas from '@/ui/user/dashboard/TagsCadastradas/TagsCadastradas';
 import styles from './page.module.css';
 import LinkButton from "@/ui/LinkButton";
+import {verifySession} from "@/lib/dal";
 
-export default function Dashboard() {
+export default async function Dashboard() {
 
+   const userSession = await verifySession()
 
+   console.log(userSession.userId)
 
   return (
     <Fragment>
@@ -31,7 +34,7 @@ export default function Dashboard() {
             </div>
 
             <div className={styles.tagsContainer}>
-               <TagsCadastradas/>
+               <TagsCadastradas userId={userSession.userId}/>
             </div>
 
             <div className={styles.activityContainer}>
