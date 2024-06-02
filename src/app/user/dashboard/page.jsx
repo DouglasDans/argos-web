@@ -42,7 +42,7 @@ export default async function Dashboard() {
             </div>
          </div>
 
-         <DependentesCadastrados/>
+         <DependentesCadastrados userId={userSession.userId}/>
       </div>
 
     </Fragment>

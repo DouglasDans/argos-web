@@ -3,9 +3,18 @@ import { Delete, Edit } from '@mui/icons-material'
 import { Button, Table, Typography } from '@mui/joy'
 import Link from 'next/link'
 import styles from './DependentesCadastrados.module.css'
+import apiRequest from "@/lib/api";
+import LinkButton from "@/ui/LinkButton";
+import ModalDeleteDependente from "@/ui/adm/dependentes/ModalDeleteDependente";
+import React from "react";
 
-export default function DependentesCadastrados() {
-  return (
+export default async function DependentesCadastrados({userId}) {
+
+   const dependentes = await apiRequest.get(`dependente/r/${userId}`).then(res =>{
+      return res.data
+   })
+
+   return (
       <ContainerLevel1 className={styles.container}>
          <Typography level={'title-lg'}>Dependentes Cadastrados</Typography>
 
@@ -19,6 +28,18 @@ export default function DependentesCadastrados() {
                </tr>
             </thead>
             <tbody>
+               {dependentes.map(dependente => {
+                  return (
+                     <tr key={dependente.id}>
+                        <td>{dependente.nome}</td>
+                        <td>{dependente.rg}</td>
+                        <td>editar</td>
+                        <td>
+                           <ModalDeleteDependente id={dependente.id}/>
+                        </td>
+                     </tr>
+                  )
+               })}
                <tr>
                   <td>João da Silva</td>
                   <td>123456789</td>
@@ -32,5 +53,5 @@ export default function DependentesCadastrados() {
             </tbody>
          </Table>
       </ContainerLevel1>
-  )
+   )
 }
