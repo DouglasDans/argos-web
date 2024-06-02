@@ -12,8 +12,6 @@ export default async function Dashboard() {
 
    const userSession = await verifySession()
 
-   console.log(userSession.userId)
-
   return (
     <Fragment>
       <div className='title'>

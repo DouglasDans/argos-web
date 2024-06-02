@@ -3,7 +3,7 @@ import { Done, Error } from "@mui/icons-material";
 import {Button, Input, Snackbar, Typography} from "@mui/joy";
 import { useState } from "react";
 
-export default function FormAddDependente(){
+export default function FormAddDependente({userId}){
 
    const [snackbarState, setSnackbarState] = useState({
       open: false
@@ -38,7 +38,7 @@ export default function FormAddDependente(){
    return (
       <form onSubmit={formChamadoSnackBar} className={'flex flex-col gap-5'}>
          <input type="hidden" name={'tipoChamado'} value={'dependente'}/>
-         <input type="hidden" name={'responsavel'} value={'1'}/>
+         <input type="hidden" name={'userId'} value={userId}/>
 
          <div className={'flex flex-col gap-2'}>
             <Typography level={'body-lg'}>Nome do Dependente</Typography>
