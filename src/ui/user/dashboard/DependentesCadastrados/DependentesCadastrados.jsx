@@ -40,16 +40,6 @@ export default async function DependentesCadastrados({userId}) {
                      </tr>
                   )
                })}
-               <tr>
-                  <td>João da Silva</td>
-                  <td>123456789</td>
-                  <td>
-                     <Link href={'dependente/1'}>
-                        <Button aria-label='Botão para editar informações do dependente' color='neutral' variant='soft'><Edit/></Button>
-                     </Link>
-                  </td>
-                  <td><Button aria-label='Botão para deletar informações do dependente' color='neutral' variant='soft'><Delete/></Button></td>
-               </tr>
             </tbody>
          </Table>
       </ContainerLevel1>
