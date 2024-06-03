@@ -7,10 +7,15 @@ import Link from 'next/link'
 import React, { Fragment } from 'react'
 import apiRequest from "@/lib/api";
 import ModalDeleteDependente from "@/ui/adm/dependentes/ModalDeleteDependente";
+import { addTagDependente } from '@/actions/user/addTagDependente'
 
 export default async function GerenciamentoDependente({params}) {
 
    const dependente = await apiRequest.get(`dependente/${params.id}`).then(res => {
+      return res.data
+   })
+
+   const tags = await apiRequest.get(`tag/d/${params.id}`).then(res => {
       return res.data
    })
 
@@ -41,42 +46,44 @@ export default async function GerenciamentoDependente({params}) {
 
                <Typography level={'h4'}>Tag Cadastrada</Typography>
 
-               <form>
+               <form action={addTagDependente}>
                   <Typography level={'body-md'}>Cadastrar nova tag</Typography>
                   <div style={{display: "flex", gap: '1rem'}}>
+                     <input type='hidden' name='dependente' value={params.id}/>
                      <Input name={'tag'} label={'Tag'} type={'text'} placeholder={'TagID'} required={true}/>
                      <Button type={'submit'}>Cadastrar</Button>
                   </div>
                </form>
 
-               <ContainerLevel3>
-               <div className={'flex gap-3 justify-between'}>
-                  <div>
-                     <span className={''}></span>
+               {tags.length === 0 ? "Nenhuma Tag cadastrada" :
+                  tags.map(tag => {
+                     return(
+                        <ContainerLevel3 key={tag.id}>
+                           <div className={'flex gap-3 justify-between'}>
+                              <div>
+                                 <div className={''}>
+                                    <Typography level={'title-md'}>Tag {tag.id}</Typography>
+                                    <Typography level={'body-md'}>Tipo: {tag.tipo}</Typography>
+                                 </div>
+                              </div>
 
-                     <div className={''}>
-                        <Typography level={'title-md'}>Tag ID 1234</Typography>
-                        <Typography level={'body-md'}>Tipo: Permanente</Typography>
-                     </div>
-                  </div>
+                              <div className={'flex gap-2 items-center'}>
+                                 <Link href={`../historico/${tag.id}`}>
+                                    <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
+                                       <History/>
+                                    </Button>
+                                 </Link>
+                                 <Button aria-label='Botão para deletar TAG do dependente' color='neutral' variant='soft'>
+                                    <Delete/>
+                                 </Button>
+                              </div>
+                           </div>
+                        </ContainerLevel3>
+                     )
+                  })
+               }
 
-                  <div className={'flex gap-2 items-center'}>
-                     <Link href={`../historico/${1}`}>
-                        <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
-                           <History/>
-                        </Button>
-                     </Link>
-                     <Button aria-label='Botão para deletar TAG do dependente' color='neutral' variant='soft'>
-                        <Delete/>
-                     </Button>
-                  </div>
-               </div>
-            <div>
-               
-            </div>
-               </ContainerLevel3>
-
-               <AtividadesRegistradas/>
+               {/* <AtividadesRegistradas/> */}
 
                <ModalDeleteDependente id={dependente.id}/>
             </div>
