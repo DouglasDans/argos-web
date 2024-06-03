@@ -2,11 +2,18 @@ import ContainerLevel1 from '@/ui/containers/ContainerLevel1'
 import { ContainerLevel3 } from '@/ui/containers/ContainerLevel3'
 import AtividadesRegistradas from '@/ui/user/dashboard/AtividadesRegitradas/AtividadesRegistradas'
 import { ArrowBack, Delete, History } from '@mui/icons-material'
-import { Button, Table, Typography } from '@mui/joy'
+import {Button, Input, Table, Typography} from '@mui/joy'
 import Link from 'next/link'
 import React, { Fragment } from 'react'
+import apiRequest from "@/lib/api";
+import ModalDeleteDependente from "@/ui/adm/dependentes/ModalDeleteDependente";
 
-export default function GerenciamentoDependente({params}) {
+export default async function GerenciamentoDependente({params}) {
+
+   const dependente = await apiRequest.get(`dependente/${params.id}`).then(res => {
+      return res.data
+   })
+
    return (
 
       <Fragment>
@@ -25,13 +32,22 @@ export default function GerenciamentoDependente({params}) {
                <History/>
                <div>
                   <Typography level={'h3'}>Gerenciamento de dependente</Typography>
-                  <Typography level="body-md">Dependente 2</Typography>
+                  <Typography level="body-md">Dependente {dependente.id}: {dependente.nome}</Typography>
                </div>
             </div>
 
 
             <div className='pr-8 pl-8 flex flex-col gap-3'>
+
                <Typography level={'h4'}>Tag Cadastrada</Typography>
+
+               <form>
+                  <Typography level={'body-md'}>Cadastrar nova tag</Typography>
+                  <div style={{display: "flex", gap: '1rem'}}>
+                     <Input name={'tag'} label={'Tag'} type={'text'} placeholder={'TagID'} required={true}/>
+                     <Button type={'submit'}>Cadastrar</Button>
+                  </div>
+               </form>
 
                <ContainerLevel3>
                <div className={'flex gap-3 justify-between'}>
@@ -45,9 +61,11 @@ export default function GerenciamentoDependente({params}) {
                   </div>
 
                   <div className={'flex gap-2 items-center'}>
-                     <Button aria-label='Botão para ver histórico da TAG' color='neutral' variant='soft'>
-                        <History/>
-                     </Button>
+                     <Link href={`../historico/${1}`}>
+                        <Button aria-label='Botão para acessar histórico da TAG' color='neutral' variant='soft'>
+                           <History/>
+                        </Button>
+                     </Link>
                      <Button aria-label='Botão para deletar TAG do dependente' color='neutral' variant='soft'>
                         <Delete/>
                      </Button>
@@ -60,7 +78,7 @@ export default function GerenciamentoDependente({params}) {
 
                <AtividadesRegistradas/>
 
-               <Button color='primary' variant='solid'>Remover Dependente</Button>
+               <ModalDeleteDependente id={dependente.id}/>
             </div>
 
          </ContainerLevel1>

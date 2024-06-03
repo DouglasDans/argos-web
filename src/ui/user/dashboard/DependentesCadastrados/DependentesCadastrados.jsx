@@ -33,7 +33,12 @@ export default async function DependentesCadastrados({userId}) {
                      <tr key={dependente.id}>
                         <td>{dependente.nome}</td>
                         <td>{dependente.rg}</td>
-                        <td>editar</td>
+                        <td>
+                           <Link href={`dependente/${dependente.id}`}>
+                              <Button fullWidth aria-label='Botão para editar informações do dependente' color='neutral'
+                                      variant='soft'><Edit/></Button>
+                           </Link>
+                        </td>
                         <td>
                            <ModalDeleteDependente id={dependente.id}/>
                         </td>
