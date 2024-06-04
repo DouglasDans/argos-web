@@ -16,7 +16,7 @@ export default async function TagsCadastradas({userId}) {
       <ContainerLevel1 className={styles.container + ' flex flex-col gap-2 h-full'}>
          <Typography level={'title-lg'}>Tags Cadastradas</Typography>
          <div>
-            {tags.map(tag => {
+            {tags.length === 0 ? "Sem Tags cadastradas" : tags.map(tag => {
                return (
                   <TagItem key={tag.id} tag={tag}/>
                )

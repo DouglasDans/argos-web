@@ -36,7 +36,7 @@ export default async function Dashboard() {
             </div>
 
             <div className={styles.activityContainer}>
-               <AtividadesRegistradas/>
+               <AtividadesRegistradas userId={userSession.userId}/>
             </div>
          </div>
 

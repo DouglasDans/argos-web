@@ -73,9 +73,9 @@ export default async function GerenciamentoDependente({params}) {
                                        <History/>
                                     </Button>
                                  </Link>
-                                 <Button aria-label='Botão para deletar TAG do dependente' color='neutral' variant='soft'>
+                                 {/* <Button aria-label='Botão para deletar TAG do dependente' color='neutral' variant='soft'>
                                     <Delete/>
-                                 </Button>
+                                 </Button> */}
                               </div>
                            </div>
                         </ContainerLevel3>
