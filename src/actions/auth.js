@@ -10,15 +10,15 @@ export default async function authAction(formData){
       senha: formData.get('txtSenha')
    }
 
-   const response = await apiRequest.get('http://localhost:8080/api/v1/auth', {
+   const responseAuth = await apiRequest.get('auth', {
       headers: {
          'Content-Type': 'application/json',
          'acessoId': requestFormData.idAcesso,
          'senha': requestFormData.senha
       }
+   }).then(res => {
+      return res.data
    })
-
-   const responseAuth = await response.json()
 
    console.log(responseAuth)
 
