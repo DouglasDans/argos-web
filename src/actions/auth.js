@@ -1,5 +1,6 @@
 import {redirect} from "next/navigation";
 import {createSession} from "@/lib/session";
+import apiRequest from "@/lib/api";
 
 export default async function authAction(formData){
    'use server'
@@ -9,8 +10,7 @@ export default async function authAction(formData){
       senha: formData.get('txtSenha')
    }
 
-   const response = await fetch('http://localhost:8080/api/v1/auth', {
-      method: 'GET',
+   const response = await apiRequest.get('http://localhost:8080/api/v1/auth', {
       headers: {
          'Content-Type': 'application/json',
          'acessoId': requestFormData.idAcesso,
